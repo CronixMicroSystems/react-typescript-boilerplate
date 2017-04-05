@@ -1,0 +1,892 @@
+//colors
+$black_10: rgba(0, 0, 0, 0.1);
+$black_9: rgba(0, 0, 0, 0.09);
+$white: #fff;
+$color_mine_shaft_approx: #333;
+$black_50: rgba(0, 0, 0, 0.5);
+$white_50: rgba(255, 255, 255, 0.5);
+$red: red;
+$color_royal_blue_approx: #3f42f6;
+$color_mountain_meadow_approx: #2ac171;
+$black_5: rgba(0, 0, 0, 0.05);
+$color_regent_st_blue_approx:  lightblue;
+$color_granny_smith_apple_approx:  lightgreen;
+$color_log_cabin_approx: #222;
+$black_15: rgba(0, 0, 0, 0.15);
+$white_75: rgba(255, 255, 255, 0.75);
+$color_japanese_laurel_approx: green;
+$color_alto_approx: #ddd;
+$black_65: rgba(0, 0, 0, 0.65);
+$white_85: rgba(255, 255, 255, 0.85);
+
+//fonts
+$font_0: Helvetica Neue Light;
+$font_1: sans-serif;
+
+//@extend-elements
+//original selectors
+//*, *:hover, *:focus, *.active
+%extend_1 {
+	text-decoration: none;
+	outline: none;
+	list-style-type: none;
+}
+
+//original selectors
+//body, html
+%extend_2 {
+	font-family: $font_0, $font_1;
+	line-height: 1.3;
+	z-index: 0;
+}
+
+//original selectors
+//.col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .col9, .col10, .offset-left1, .offset-left2, .offset-left3, .offset-left4, .offset-left5, .offset-left6, .offset-left7, .offset-left8, .offset-left9, .offset-left10, .offset-right1, .offset-right2, .offset-right3, .offset-right4, .offset-right5, .offset-right6, .offset-right7, .offset-right8, .offset-right9, .offset-right10
+%extend_3 {
+	float: left;
+	vertical-align: top;
+	left: 0;
+	min-height: 0.5px;
+}
+
+
+* {
+	font-size: 13.5px;
+	padding: 0;
+	margin: 0;
+	@extend %extend_1;
+	&:hover {
+		@extend %extend_1;
+	}
+	&:focus {
+		@extend %extend_1;
+	}
+	&.active {
+		@extend %extend_1;
+	}
+}
+body {
+	@extend %extend_2;
+}
+html {
+	@extend %extend_2;
+}
+i {
+	font-size: inherit;
+}
+b {
+	font-size: inherit;
+}
+span {
+	font-size: inherit;
+}
+p {
+	font-size: inherit;
+}
+thead {
+	font-size: inherit;
+}
+tbody {
+	font-size: inherit;
+}
+td {
+	font-size: inherit;
+}
+tr {
+	font-size: inherit;
+}
+th {
+	font-size: inherit;
+}
+code {
+	font-size: inherit;
+}
+pre {
+	font-size: inherit;
+}
+nav {
+	font-size: inherit;
+}
+footer {
+	font-size: inherit;
+}
+article {
+	font-size: inherit;
+}
+header {
+	font-size: inherit;
+}
+h1 {
+	font-size: 23px;
+}
+h2 {
+	font-size: 18px;
+}
+h3 {
+	font-size: 16.5px;
+}
+h4 {
+	font-size: 14.5px;
+}
+h5 {
+	font-size: 13.5px;
+}
+h6 {
+	font-size: 12.5px;
+}
+a {
+	cursor: pointer;
+}
+button {
+	cursor: pointer;
+	cursor: pointer;
+	border: none;
+}
+.line {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+	width: 100%;
+	float: left;
+	clear: right;
+}
+.line-compress {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+	width: 100%;
+	float: left;
+	clear: right;
+	padding: 0 2%;
+}
+.col1 {
+	@extend %extend_3;
+	width: 10%;
+}
+.col2 {
+	@extend %extend_3;
+	width: 20%;
+}
+.col3 {
+	@extend %extend_3;
+	width: 30%;
+}
+.col4 {
+	@extend %extend_3;
+	width: 40%;
+}
+.col5 {
+	@extend %extend_3;
+	width: 50%;
+}
+.col6 {
+	@extend %extend_3;
+	width: 60%;
+}
+.col7 {
+	@extend %extend_3;
+	width: 70%;
+}
+.col8 {
+	@extend %extend_3;
+	width: 80%;
+}
+.col9 {
+	@extend %extend_3;
+	width: 90%;
+}
+.col10 {
+	@extend %extend_3;
+	width: 100%;
+}
+.offset-left1 {
+	@extend %extend_3;
+	margin-left: 10%;
+}
+.offset-left2 {
+	@extend %extend_3;
+	margin-left: 20%;
+}
+.offset-left3 {
+	@extend %extend_3;
+	margin-left: 30%;
+}
+.offset-left4 {
+	@extend %extend_3;
+	margin-left: 40%;
+}
+.offset-left5 {
+	@extend %extend_3;
+	margin-left: 50%;
+}
+.offset-left6 {
+	@extend %extend_3;
+	margin-left: 60%;
+}
+.offset-left7 {
+	@extend %extend_3;
+	margin-left: 70%;
+}
+.offset-left8 {
+	@extend %extend_3;
+	margin-left: 80%;
+}
+.offset-left9 {
+	@extend %extend_3;
+	margin-left: 90%;
+}
+.offset-left10 {
+	@extend %extend_3;
+	margin-left: 100%;
+}
+.offset-right1 {
+	@extend %extend_3;
+	margin-right: 10%;
+}
+.offset-right2 {
+	@extend %extend_3;
+	margin-right: 20%;
+}
+.offset-right3 {
+	@extend %extend_3;
+	margin-right: 30%;
+}
+.offset-right4 {
+	@extend %extend_3;
+	margin-right: 40%;
+}
+.offset-right5 {
+	@extend %extend_3;
+	margin-right: 50%;
+}
+.offset-right6 {
+	@extend %extend_3;
+	margin-right: 60%;
+}
+.offset-right7 {
+	@extend %extend_3;
+	margin-right: 70%;
+}
+.offset-right8 {
+	@extend %extend_3;
+	margin-right: 80%;
+}
+.offset-right9 {
+	@extend %extend_3;
+	margin-right: 90%;
+}
+.offset-right10 {
+	@extend %extend_3;
+	margin-right: 100%;
+}
+.btn {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+	width: 100%;
+	padding: 5px 2%;
+	display: block;
+	&.btn-medium {
+		padding: 9.5px 2%;
+		font-size: 14.5px;
+	}
+	&.btn-large {
+		padding: 14px 2%;
+		font-size: 17px;
+	}
+	&:hover {
+		opacity: 0.8;
+		text-decoration: none;
+	}
+	&:focus {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		text-decoration: none;
+	}
+	&.active {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		text-decoration: none;
+		&:hover {
+			opacity: 1;
+		}
+	}
+	&.disabled {
+		cursor: none;
+	}
+}
+.color-white {
+	color: $white;
+}
+.color-black {
+	color: $color_mine_shaft_approx;
+}
+.color-muted {
+	color: $black_50;
+}
+.color-muted-inverse {
+	color: $white_50;
+}
+.color-error {
+	color: $red;
+}
+.color-info {
+	color: $color_royal_blue_approx;
+}
+.color-success {
+	color: $color_mountain_meadow_approx;
+}
+.hr {
+	border-top: 1px solid $black_5;
+	width: 100%;
+	float: none;
+	clear: both;
+	height: 0;
+}
+.push-left {
+	float: left;
+}
+.push-right {
+	float: right;
+}
+.push-center {
+	margin: 0 auto;
+	float: none;
+}
+.center-content {
+	text-align: center;
+}
+.left-content {
+	text-align: left;
+}
+.right-content {
+	text-align: right;
+}
+.v-top {
+	vertical-align: top;
+}
+.v-middle {
+	vertical-align: middle;
+}
+.v-bottom {
+	vertical-align: bottom;
+}
+.v-super {
+	vertical-align: super;
+}
+.v-text {
+	vertical-align: text-bottom;
+}
+.v-sub {
+	vertical-align: sub;
+}
+.font-light {
+	font-weight: lighter;
+}
+.font-medium {
+	font-weight: 500;
+}
+.font-bold {
+	font-weight: bold;
+}
+.over-hidden {
+	overflow: hidden;
+}
+.over-y-hidden {
+	overflow-y: hidden;
+}
+.over-x-hidden {
+	overflow-x: hidden;
+}
+.over-scroll {
+	overflow: scroll;
+}
+.over-x-scroll {
+	overflow-x: scroll;
+}
+.over-y-scroll {
+	overflow-y: scroll;
+}
+.breakword {
+	//Instead of the line below you could use @include word-break($value)
+	word-break: break-all;
+}
+.lowercase {
+	text-transform: lowercase;
+}
+.uppercase {
+	text-transform: uppercase;
+}
+.capitalize {
+	text-transform: capitalize;
+}
+.ellips {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.layer1 {
+	z-index: 1;
+}
+.layer2 {
+	z-index: 2;
+}
+.layer3 {
+	z-index: 3;
+}
+.layer4 {
+	z-index: 4;
+}
+.border {
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 0 0 0 1px $black_10;
+}
+.border-info {
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 0 0 0 1px $color_regent_st_blue_approx;
+}
+.border-error {
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 0 0 0 1px lightred;
+}
+.border-success {
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 0 0 0 1px $color_granny_smith_apple_approx;
+}
+.radius3 {
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 3px;
+}
+.radius5 {
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 5px;
+}
+.radius10 {
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 10px;
+}
+.radius20 {
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 20px;
+}
+.radius-full {
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 100%;
+}
+.separator3 {
+	min-height: 3px;
+	clear: both;
+	float: none;
+	width: 100%;
+}
+.separator5 {
+	min-height: 5px;
+	clear: both;
+	float: none;
+	width: 100%;
+}
+.separator10 {
+	min-height: 10px;
+	clear: both;
+	float: none;
+	width: 100%;
+}
+.separator15 {
+	min-height: 15px;
+	clear: both;
+	float: none;
+	width: 100%;
+}
+.separator30 {
+	min-height: 30px;
+	clear: both;
+	float: none;
+	width: 100%;
+}
+.separator50 {
+	min-height: 50px;
+	clear: both;
+	float: none;
+	width: 100%;
+}
+.separator100 {
+	min-height: 100px;
+	clear: both;
+	float: none;
+	width: 100%;
+}
+.hide {
+	display: none;
+}
+.show {
+	display: inherit;
+}
+.hidden {
+	visibility: hidden;
+}
+.visible {
+	visibility: visible;
+}
+.half-opacity {
+	opacity: 0.5;
+}
+.less-opacity {
+	opacity: 0.75;
+}
+.toggle-opacity-hover {
+	opacity: 0.65;
+	&:hover {
+		opacity: 1;
+	}
+}
+.toggle-opacity-inverse-hover {
+	opacity: 1;
+	&:hover {
+		opacity: 0.65;
+	}
+}
+.fixed {
+	position: fixed;
+}
+.absolute {
+	position: absolute;
+}
+.relative {
+	position: relative;
+}
+.relative-absolute {
+	position: relative absolute;
+}
+.top {
+	top: 0;
+}
+.left {
+	left: 0;
+}
+.right {
+	right: 0;
+}
+.bottom {
+	bottom: 0;
+}
+.middle {
+	left: 0;
+	right: 0;
+}
+.bg-black {
+	background-color: $color_log_cabin_approx;
+}
+.bg-white {
+	background-color: $white;
+}
+.bg-muted {
+	background-color: $black_15;
+}
+.bg-muted-inverse {
+	background-color: $white_75;
+}
+.bg-error {
+	background-color: $red;
+}
+.bg-info {
+	background-color: $color_royal_blue_approx;
+}
+.bg-success {
+	background-color: $color_japanese_laurel_approx;
+}
+@-webkit-keyframes fadeOut {
+	25% {
+		opacity: 0.6;
+	}
+	75% {
+		opacity: 0.4;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes fadeOut {
+	25% {
+		opacity: 0.6;
+	}
+	75% {
+		opacity: 0.4;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@-webkit-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	75% {
+		opacity: 1;
+	}
+}
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	75% {
+		opacity: 1;
+	}
+}
+.fade-out-slow {
+	animation: fadeOut 0.85s linear;
+}
+.fade-out-medium {
+	animation: fadeOut 0.45s linear;
+}
+.fade-out-fast {
+	animation: fadeOut 0.15s linear;
+}
+.fade-in-slow {
+	animation: fadeIn 0.85s linear;
+}
+.fade-in-medium {
+	animation: fadeIn 0.45s linear;
+}
+.fade-in-fast {
+	animation: fadeIn 0.15s linear;
+}
+.no-border {
+	border: none;
+}
+.no-radius {
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 0 0 0 0;
+}
+.no-bg {
+	background-color: none;
+}
+.no-padding {
+	padding: 0;
+}
+.no-margin {
+	margin: 0;
+}
+.no-list-style {
+	list-style-type: none;
+}
+.no-float {
+	float: none;
+}
+.no-height {
+	height: 0;
+	max-height: 0;
+}
+.no-width {
+	width: 0;
+	max-width: 0;
+}
+.no-opacity {
+	opacity: 0;
+}
+input[type="text"] {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+	width: 100%;
+	height: 30px;
+	border: none;
+	padding: 0 1.5%;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+}
+input[type="email"] {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+	width: 100%;
+	height: 30px;
+	border: none;
+	padding: 0 1.5%;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+}
+input[type="password"] {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+	width: 100%;
+	height: 30px;
+	border: none;
+	padding: 0 1.5%;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+}
+input[type="search"] {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+	width: 100%;
+	height: 30px;
+	border: none;
+	padding: 0 1.5%;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+}
+select {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+	width: 100%;
+	border: none;
+	background: none;
+	padding: 8px 0 0;
+	height: 30px;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 3px;
+	outline: none;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	&:hover {
+		//Instead of the line below you could use @include box-sizing($bs)
+		box-sizing: border-box;
+		width: 100%;
+		border: none;
+		background: none;
+		padding: 8px 0 0;
+		height: 30px;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 3px;
+		outline: none;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	}
+	&:focus {
+		//Instead of the line below you could use @include box-sizing($bs)
+		box-sizing: border-box;
+		width: 100%;
+		border: none;
+		background: none;
+		padding: 8px 0 0;
+		height: 30px;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 3px;
+		outline: none;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	}
+	option {
+		padding: 5px;
+		&:hover {
+			padding: 5px;
+		}
+	}
+}
+input[type="radio"] {
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: none;
+	width: auto;
+	padding: 0;
+	&:hover {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: none;
+		width: auto;
+		padding: 0;
+	}
+	&:focus {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: none;
+		width: auto;
+		padding: 0;
+	}
+}
+input[type="checkbox"] {
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: none;
+	width: auto;
+	padding: 0;
+	&:hover {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: none;
+		width: auto;
+		padding: 0;
+	}
+	&:focus {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: none;
+		width: auto;
+		padding: 0;
+	}
+}
+textarea {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+	font-size: inherit;
+	width: 100%;
+	padding: 10px 15px;
+	border: none;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	&:focus {
+		//Instead of the line below you could use @include box-sizing($bs)
+		box-sizing: border-box;
+		font-size: inherit;
+		width: 100%;
+		padding: 10px 15px;
+		border: none;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	}
+	&:hover {
+		//Instead of the line below you could use @include box-sizing($bs)
+		box-sizing: border-box;
+		font-size: inherit;
+		width: 100%;
+		padding: 10px 15px;
+		border: none;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	}
+}
+.badge {
+	padding: 0 5px;
+	font-size: inherit;
+}
+.badge-medium {
+	padding: 3px 8px;
+	font-size: 15px;
+	font-size: inherit;
+}
+.badge-large {
+	padding: 6px 15px;
+	font-size: 16.5px;
+}
+.overlay {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	&.overlay-dark {
+		background-color: $black_65;
+	}
+	&.overlay-light {
+		background-color: $white_85;
+	}
+}
+@media screen and(min-width:800px) {
+	.mobile {
+		display: none;
+	}
+	.tablet {
+		display: none;
+	}
+	.desktop {
+		display: inherit;
+	}
+}
+@media screen and(max-width:800px) {
+	.mobile {
+		display: none;
+	}
+	.desktop {
+		display: none;
+	}
+	.tablet {
+		display: inherit;
+	}
+	.line-tablet {
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+@media screen and(max-width:400px) {
+	.tablet {
+		display: none;
+	}
+	.desktop {
+		display: none;
+	}
+	.mobile {
+		display: inherit;
+	}
+	.line-mobile {
+		width: 100%;
+		margin: 0 auto;
+	}
+}

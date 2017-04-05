@@ -1,22 +1,24 @@
-import { createStore, applyMiddleware, Store } from 'redux';
-import { logger } from '../middleware';
-import rootReducer, { RootState } from '../reducers';
+import {syncHistoryWithStore} from 'react-router-redux'
+import {browserHistory} from 'react-router'
+import {createStore, applyMiddleware, compose} from 'redux'
+import {loadTranslations, setLocale, syncTranslationWithStore} from 'react-redux-i18n'
+import rootReducer from './reducers/index'
+import thunk from 'redux-thunk'
+import { createLogger } from 'redux-logger'
+import {enCA, enUS} from '../i18n/index'
+import {INITIAL_STATE as initialState} from './reducers/initial_state'
 
-export function configureStore(initialState?: RootState): Store<RootState> {
-  const create = window.devToolsExtension
-    ? window.devToolsExtension()(createStore)
-    : createStore;
-
-  const createStoreWithMiddleware = applyMiddleware(logger)(create);
-
-  const store = createStoreWithMiddleware(rootReducer, initialState) as Store<RootState>;
-
-  if (module.hot) {
-    module.hot.accept('../reducers', () => {
-      const nextReducer = require('../reducers');
-      store.replaceReducer(nextReducer);
-    });
-  }
-
-  return store;
+const TRANSLATIONS = {
+  'en-CA': enCA,
+  'en-US': enUS
 }
+
+const LOGGER = createLogger()
+const STORE = createStore(rootReducer, initialState, compose(applyMiddleware(thunk, LOGGER)))
+
+syncTranslationWithStore(STORE)
+STORE.dispatch(loadTranslations(TRANSLATIONS))
+STORE.dispatch(setLocale(initialState.app.locale))
+
+export let history = syncHistoryWithStore(browserHistory, STORE)
+export default STORE

@@ -1,27 +1,25 @@
 {
+  "compileOnSave": false,
+  "buildOnSave": false,
   "compilerOptions": {
-    "sourceMap": true,
-    "target": "es5",
-    "jsx": "react",
     "module": "commonjs",
-    "moduleResolution": "node",
+    "target": "es6",
+    "jsx": "react",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "declaration": false,
     "noImplicitAny": false,
-    "noImplicitReturns": false,
-    "removeComments": true,
-    "strictNullChecks": false,
-    "outDir": "build",
-    "lib": [
-      "es6",
-      "es7",
-      "dom"
-    ]
+    "removeComments": false,
+    "sourceMap": false,
+    "inlineSourceMap": true,
+    "noEmitHelpers": true
+  },
+  "awesomeTypescriptLoaderOptions": {
+    "useBabel": true,
+    "useCache": false,
+    "emitRequireType": false
   },
   "exclude": [
-    "dist",
-    "build",
-    "node_modules"
+    "node_modules",
+    "dist"
   ]
 }

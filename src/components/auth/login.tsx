@@ -11,6 +11,8 @@ import TextField from 'material-ui/TextField'
 import Paper from 'material-ui/Paper'
 import * as validator from 'validator'
 
+const LOGO = require('../../images/header_logo.jpg')
+
 import {actionLoginUser} from '../../actions/index'
 
 const STYLES = {
@@ -43,7 +45,16 @@ const mapDispatchToProps = (dispatch: Redux.Dispatch<any>): ConnectedDispatch =>
 })
 
 class LoginComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
-
+  constructor (props) {
+    super(props)
+    this.state = {
+      Email: '',
+      EmailError: '',
+      Password: '',
+      PasswordError: '',
+      Errors: []
+    }
+  }
   onSubmitButtonClick () {
     let err = this.state.Errors
     if (this.state.Email === '') {
@@ -97,7 +108,7 @@ class LoginComponent extends React.Component<ConnectedState & ConnectedDispatch 
     const ERROR_CONTENT = LOGIN_ERROR_MES_OVERALL ? <div className="auth__error-messages">{LOGIN_ERROR_MES_OVERALL}</div> : ''
     const LOGIN = (
       <div>
-        <Image src={'../../images/header_logo.jpg'}
+        <Image src={LOGO}
           className="auth__brand"
           responsive/>
         <Form name="login-form">
@@ -166,4 +177,4 @@ class LoginComponent extends React.Component<ConnectedState & ConnectedDispatch 
     )
   }
 }
-export const Login: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(LoginComponent)
+export const Login: any = connect(mapStateToProps, mapDispatchToProps)(LoginComponent)

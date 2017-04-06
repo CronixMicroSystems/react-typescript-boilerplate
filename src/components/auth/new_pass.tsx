@@ -51,6 +51,14 @@ class NewPassComponent extends React.Component<ConnectedState & ConnectedDispatc
 
   constructor (props) {
     super(props)
+    this.state = {
+      Password: '',
+      PasswordError: '',
+      ConfirmPassword: '',
+      ConfirmPasswordError: '',
+      Errors: []
+    }
+    console.log(location)
     this.props.actionChangeTokenLocal(history.getCurrentLocation().query.token)
   }
 
@@ -173,4 +181,4 @@ class NewPassComponent extends React.Component<ConnectedState & ConnectedDispatc
   }
 }
 
-export const NewPass: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(NewPassComponent)
+export const NewPass: any = connect(mapStateToProps, mapDispatchToProps)(NewPassComponent)

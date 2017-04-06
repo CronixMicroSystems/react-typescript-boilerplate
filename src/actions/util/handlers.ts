@@ -1,4 +1,4 @@
-import { fnNetworkInactive, fnToggleDialogAlert, errorToast, successToast, warningToast, fnLoginErrorMesOverall } from '../../actions/index'
+import { fnNetworkInactive, actionToggleDialogAlert, errorToast, successToast, warningToast, fnLoginErrorMesOverall } from '../../actions/index'
 
 export function requestSuccessHandler (name, close, success) {
   return dispatch => {
@@ -13,7 +13,7 @@ export function requestSuccessHandler (name, close, success) {
 export function requestErrorHandler (name, message, close) {
   return dispatch => {
     close ? close() : ''
-    dispatch(fnToggleDialogAlert(true, true, message, `Action ${name}`))
+    dispatch(actionToggleDialogAlert(true, true, message, `Action ${name}`))
     dispatch(fnNetworkInactive(name))
     errorToast(name, 'Error!')
   }
@@ -29,7 +29,7 @@ export function requestErrorHandlerAuth (name, message) {
 
 export function requestErrorHandlerAuthCatch (name, message) {
   return dispatch => {
-    dispatch(fnToggleDialogAlert(true, true, message, `Action ${name}`))
+    dispatch(actionToggleDialogAlert(true, true, message, `Action ${name}`))
     dispatch(fnNetworkInactive(name))
     errorToast(name, 'Error!')
   }

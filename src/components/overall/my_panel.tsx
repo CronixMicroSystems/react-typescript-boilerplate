@@ -22,4 +22,4 @@ class PanelComponent extends React.Component<ConnectedState & ConnectedDispatch 
     )}/>
   }
 }
-export const Panel: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(PanelComponent)
+export const Panel: any = connect(mapStateToProps, mapDispatchToProps)(PanelComponent)

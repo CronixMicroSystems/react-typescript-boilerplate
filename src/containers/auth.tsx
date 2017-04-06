@@ -37,4 +37,4 @@ class AuthComponent extends React.Component<ConnectedState & ConnectedDispatch &
     )
   }
 }
-export const Auth: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(AuthComponent)
+export const Auth: any = connect(mapStateToProps, mapDispatchToProps)(AuthComponent)

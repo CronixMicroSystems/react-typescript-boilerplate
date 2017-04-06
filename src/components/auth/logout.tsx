@@ -18,4 +18,4 @@ class LogoutComponent extends React.Component<ConnectedState & ConnectedDispatch
   componentWillMount () { this.props.actionLogoutUserLocal() }
   public render() { return (<div/>) }
 }
-export const Logout: React.ComponentClass<OwnProps> = connect(null, mapDispatchToProps)(LogoutComponent)
+export const Logout: any = connect(null, mapDispatchToProps)(LogoutComponent)

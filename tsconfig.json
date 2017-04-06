@@ -1,25 +1,30 @@
+
 {
-  "compileOnSave": false,
-  "buildOnSave": false,
   "compilerOptions": {
-    "module": "commonjs",
+    "sourceMap": true,
     "target": "es6",
     "jsx": "react",
+    "module": "commonjs",
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "declaration": false,
     "noImplicitAny": false,
-    "removeComments": false,
-    "sourceMap": false,
-    "inlineSourceMap": true,
-    "noEmitHelpers": true
-  },
-  "awesomeTypescriptLoaderOptions": {
-    "useBabel": true,
-    "useCache": false,
-    "emitRequireType": false
+    "noImplicitReturns": false,
+    "removeComments": true,
+    "strictNullChecks": false,
+    "outDir": "static",
+    "lib": [
+      "es6",
+      "es7",
+      "dom"
+    ]
   },
   "exclude": [
-    "node_modules",
-    "dist"
+    "static",
+    "node_modules"
+  ],
+  "files": [
+    "typings/index.d.ts"
   ]
 }

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import TemplateInput from './templateInput'
+import {TemplateInput} from './templateInput'
 
 import {
   ValidatorFirstName,

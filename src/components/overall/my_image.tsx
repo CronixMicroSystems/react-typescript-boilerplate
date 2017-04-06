@@ -2,10 +2,22 @@ import * as React from 'react'
 import {connect} from 'react-redux'
 import {Image} from 'react-bootstrap'
 
-class MyImage extends Component {
+interface OwnProps {
+  src?: string,
+  className?: string,
+  responsive?: boolean
+}
+interface ConnectedState {}
+interface ConnectedDispatch {}
+interface OwnState {}
+
+const mapStateToProps = null
+const mapDispatchToProps = null
+
+class MyImageComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
 
   render () {
-    let listProps = Object.assign({}, this.props)
+    let listProps: any = Object.assign({}, this.props)
 
     delete listProps.active
     delete listProps.toastr
@@ -16,4 +28,4 @@ class MyImage extends Component {
     return <Image {...listProps} />
   }
 }
-export default connect()(MyImage)
+export const MyImage: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(MyImageComponent)

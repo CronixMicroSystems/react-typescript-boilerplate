@@ -44,6 +44,15 @@ const mapDispatchToProps = (dispatch: Redux.Dispatch<any>): ConnectedDispatch =>
 
 class ResPassComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
 
+  constructor (props) {
+    super(props)
+    this.state = {
+      Email: '',
+      EmailError: '',
+      Errors: []
+    }
+  }
+
   fnEmail (event) { this.setState({ Email: event.target.value }) }
 
   fnRestorePasswordLocal () {
@@ -122,4 +131,4 @@ class ResPassComponent extends React.Component<ConnectedState & ConnectedDispatc
   }
 }
 
-export const ResPass: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(ResPassComponent)
+export const ResPass: any = connect(mapStateToProps, mapDispatchToProps)(ResPassComponent)

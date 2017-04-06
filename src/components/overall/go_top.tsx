@@ -4,7 +4,7 @@ import FloatingActionButton from 'material-ui/FloatingActionButton'
 import UpwardIcon from 'material-ui/svg-icons/navigation/arrow-upward'
 
 interface OwnProps {
-  scrollArea: any
+  scrollArea?: any
 }
 interface ConnectedState {}
 interface ConnectedDispatch {}

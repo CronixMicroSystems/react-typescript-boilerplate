@@ -4,7 +4,7 @@ import {CONTACTS_INITIAL_STATE} from '../initial_state'
 function contactsReducer (state = CONTACTS_INITIAL_STATE, action) {
   switch (action.type) {
     case types.GET_CONTACTS:
-      return {...state,
+      return  Object.assign({}, state, {
         PrimaryName: action.PrimaryName,
         PrimaryNameUid: action.PrimaryNameUid,
         PrimaryEmail: action.PrimaryEmail,
@@ -21,9 +21,15 @@ function contactsReducer (state = CONTACTS_INITIAL_STATE, action) {
         BillingAddressUid: action.BillingAddressUid,
         BillingPhone: action.BillingPhone,
         BillingPhoneUid: action.BillingPhoneUid
-      }
+      })
     case types.EDIT_CONTACTS_DIALOG:
-      return {...state, toggleEditContact: action.status, currentEditKey: action.key, currentEditValue: action.value, currentEditIndex: action.Index, currentEditUid: action.uid}
+      return Object.assign({}, state, {
+        toggleEditContact: action.status,
+        currentEditKey: action.key,
+        currentEditValue: action.value,
+        currentEditIndex: action.Index,
+        currentEditUid: action.uid
+      })
     default:
       return state
   }

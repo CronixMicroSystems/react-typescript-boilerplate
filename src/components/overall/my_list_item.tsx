@@ -2,7 +2,14 @@ import * as React from 'react'
 import {connect} from 'react-redux'
 import {ListItem} from 'material-ui/List'
 
-interface OwnProps {}
+interface OwnProps {
+  primaryText?: string,
+  className?: string,
+  leftIcon?: any,
+  initiallyOpen?: boolean,
+  primaryTogglesNestedList?: boolean,
+  nestedItems?: any
+}
 interface ConnectedState {}
 interface ConnectedDispatch {}
 interface OwnState {}
@@ -24,4 +31,4 @@ class ListItemsComponent extends React.Component<ConnectedState & ConnectedDispa
     return <ListItem {...listProps} />
   }
 }
-export const ListItems: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(ListItemsComponent)
+export const MyListItem: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(ListItemsComponent)

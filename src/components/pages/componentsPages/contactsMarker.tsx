@@ -2,7 +2,9 @@ import * as React from 'react'
 import {connect} from 'react-redux'
 
 interface OwnProps {
-  text: string
+  text?: string,
+  lat?: number,
+  lng?: number
 }
 interface ConnectedState {}
 interface ConnectedDispatch {}

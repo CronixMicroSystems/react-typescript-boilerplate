@@ -5,14 +5,21 @@ interface OwnProps {}
 interface ConnectedState {}
 interface ConnectedDispatch {}
 interface OwnState {
-  version: 'v1.0.0'
+  version: string
 }
 
 const mapStateToProps = null
 const mapDispatchToProps = null
 
 class FooterComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
-  public render () {
+  constructor(props) {
+    super(props)
+    this.state = {
+      version: '1.0.0'
+    }
+  }
+
+  public render() {
     return (
       <footer className="site-footer clear-fix">
         <div className="pull-left">Copyright © 2017</div>

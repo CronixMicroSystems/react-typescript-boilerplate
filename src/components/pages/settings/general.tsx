@@ -1,4 +1,5 @@
 import * as React from 'react'
+import * as Redux from 'redux'
 import {connect} from 'react-redux'
 import {I18n} from 'react-redux-i18n'
 import { actionChangeHeaderTitle, actionChangeNavigationBar } from '../../../actions'
@@ -38,4 +39,4 @@ class GeneralComponent extends React.Component<ConnectedState & ConnectedDispatc
     )
   }
 }
-export const General: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(GeneralComponent)
+export const General: any = connect(mapStateToProps, mapDispatchToProps)(GeneralComponent)

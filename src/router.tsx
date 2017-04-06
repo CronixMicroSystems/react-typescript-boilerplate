@@ -12,7 +12,7 @@ import {Users} from './components/pages/users'
 import {Profile} from './components/pages/profile'
 import {General} from './components/pages/settings/general'
 import {NotFound} from './components/pages/not_found'
-import {ContactsPage} from './components/pages/contacts'
+import {Contacts} from './components/pages/contacts'
 import {FAQ} from './components/pages/faq'
 import {Email} from './components/pages/email'
 
@@ -38,7 +38,7 @@ export default (
                 <Route path="/users" component={Users}/>
                 <Route path="/profile" component={Profile}/>
                 <Route path="/settings" component={General}/>
-                <Route path="/contacts" component={ContactsPage}/>
+                <Route path="/contacts" component={Contacts}/>
                 <Route path="/faq" component={FAQ}/>
                 <Route path="/email" component={Email}/>
             </Route>

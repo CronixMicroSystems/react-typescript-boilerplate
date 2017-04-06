@@ -1,4 +1,4 @@
-export const fnTypes: any = {
+export const fnTypes = {
   // admins
   GET_TABLE_DATA_ADMIN: 'GetTableDataAdmin',
   ADMIN_INSERT: 'AdminInsert',

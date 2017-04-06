@@ -1,9 +1,14 @@
 import * as React from 'react'
 import {connect} from 'react-redux'
-import activeComponent from 'react-router-active-component'
-let LinkNav = activeComponent('div', {link: true})
+import {Link} from 'react-router'
+// import activeComponent from 'react-router-active-component'
+// let LinkNav = activeComponent('div', {link: true})
 
-interface OwnProps {}
+interface OwnProps {
+  activeClassName?: string,
+  to?: string,
+  key?: number
+}
 interface ConnectedState {}
 interface ConnectedDispatch {}
 interface OwnState {}
@@ -11,7 +16,7 @@ interface OwnState {}
 const mapStateToProps = null
 const mapDispatchToProps = null
 
-class FooterComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
+class LinkNavComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
 
   render () {
     let listProps: any = Object.assign({}, this.props)
@@ -25,7 +30,7 @@ class FooterComponent extends React.Component<ConnectedState & ConnectedDispatch
     delete listProps.location
     delete listProps.routes
 
-    return <LinkNav {...listProps} />
+    return <Link {...listProps} />
   }
 }
-export const Footer: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(FooterComponent)
+export const MyLinkNav: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(LinkNavComponent)

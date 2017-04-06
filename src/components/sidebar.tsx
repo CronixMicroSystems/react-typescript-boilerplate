@@ -1,4 +1,5 @@
 import * as React from 'react'
+import * as Redux from 'redux'
 import { connect } from 'react-redux'
 import { List } from 'material-ui/List'
 import { IndexLinkContainer } from 'react-router-bootstrap'
@@ -22,9 +23,9 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close'
 import ScrollArea = require('react-scrollbar')
 import { ROLES } from '../data/enums'
 
-import MyListItem from './overall/my_list_item'
-import LinkNav from './overall/my_link_nav'
-import { actionToggleSidebar, actionToggleMobileSidebar } from '../actions'
+import {MyListItem} from './overall/my_list_item'
+import {MyLinkNav} from './overall/my_link_nav'
+import {actionToggleSidebar, actionToggleMobileSidebar} from '../actions'
 
 interface OwnProps {}
 interface ConnectedState {
@@ -83,27 +84,27 @@ class SidebarComponent extends React.Component<ConnectedState & ConnectedDispatc
     let userRoleId = 1
 
     let content = {
-      mail: <LinkNav activeClassName="sidebar-main__link-active" to={'/email/'}>
+      mail: <MyLinkNav activeClassName="sidebar-main__link-active" to={'/email/'}>
         <MyListItem className="sidebar-main__link"
           primaryText={I18n.t('Sidebar.emailMenuItem')}
           leftIcon={<MailIcon color={teal50}/>}/>
-      </LinkNav>,
-      users: <LinkNav activeClassName="sidebar-main__link-active" to={'/users'}>
+      </MyLinkNav>,
+      users: <MyLinkNav activeClassName="sidebar-main__link-active" to={'/users'}>
         <MyListItem className="sidebar-main__link"
           primaryText={I18n.t('Sidebar.usersMenuItem')}
           leftIcon={<EqualizerIcon color={teal50}/>}/>
-      </LinkNav>,
-      contacts: <LinkNav activeClassName="sidebar-main__link-active" to={'/contacts'}>
+      </MyLinkNav>,
+      contacts: <MyLinkNav activeClassName="sidebar-main__link-active" to={'/contacts'}>
         <MyListItem className="sidebar-main__link"
           primaryText={I18n.t('Sidebar.contactsMenuItem')}
           leftIcon={<ContactsIcon color={teal50}/>}/>
-      </LinkNav>
+      </MyLinkNav>
     }
 
     let mailContent = userRoleId === ROLES.HOW ? content.mail : ''
     let usersContent = userRoleId === ROLES.HOW ? content.users : ''
     let contactsContent = userRoleId !== ROLES.HOW ? content.contacts : ''
-
+    const ScrollAreaLocal = ScrollArea['default']
     return (
       <div className="sidebar-main">
         <div className="sidebar-main__brand">
@@ -129,25 +130,25 @@ class SidebarComponent extends React.Component<ConnectedState & ConnectedDispatc
               targetOrigin={{horizontal: 'right', vertical: 'top'}}
             >
               <MenuItem className="user-tool__menu-item-wrap" children={
-                <LinkNav to={'/profile'}>
+                <MyLinkNav to={'/profile'}>
                   <MyListItem primaryText={I18n.t('HeaderTools.toolsMenuItemProfile')}/>
-                </LinkNav>
+                </MyLinkNav>
               }/>
               <MenuItem className="user-tool__menu-item-wrap" children={
-                <LinkNav to={'/settings'}>
+                <MyLinkNav to={'/settings'}>
                   <MyListItem primaryText={I18n.t('HeaderTools.toolsMenuItemSettings')}/>
-                </LinkNav>
+                </MyLinkNav>
               }/>
               <Divider />
               <MenuItem className="user-tool__menu-item-wrap" children={
-                <LinkNav to={'/logout'}>
+                <MyLinkNav to={'/logout'}>
                   <MyListItem primaryText={I18n.t('HeaderTools.toolsMenuItemLogout')}/>
-                </LinkNav>
+                </MyLinkNav>
               }/>
             </IconMenu>
           </div>
         </div>
-        <ScrollArea
+        <ScrollAreaLocal
           speed={0.8}
           className="sidebar-main__scroll-bar"
           contentClassName="sidebar-main__scroll-content"
@@ -175,24 +176,24 @@ class SidebarComponent extends React.Component<ConnectedState & ConnectedDispatc
                   initiallyOpen={false}
                   primaryTogglesNestedList
                   nestedItems={[
-                    <LinkNav activeClassName="sidebar-main__link-active" key={1}
+                    <MyLinkNav activeClassName="sidebar-main__link-active" key={1}
                       to={'/settings'}>
                       <MyListItem className="sidebar-main__link sidebar-main__link-wrap"
                         primaryText={I18n.t('Sidebar.settingsMenuGeneral')}
                         leftIcon={<BuildingIcon color={teal50}/>}/>
-                    </LinkNav>
+                    </MyLinkNav>
                   ]}
                 />
                 {contactsContent}
-                <LinkNav activeClassName="sidebar-main__link-active" to={'/faq'}>
+                <MyLinkNav activeClassName="sidebar-main__link-active" to={'/faq'}>
                   <MyListItem className="sidebar-main__link"
                     primaryText={I18n.t('Sidebar.FAQMenuItem')}
                     leftIcon={<FAQIcon color={teal50}/>}/>
-                </LinkNav>
+                </MyLinkNav>
               </List>
             </div>
           </div>
-        </ScrollArea>
+        </ScrollAreaLocal>
       </div>
     )
   }

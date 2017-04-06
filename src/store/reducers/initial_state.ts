@@ -109,121 +109,14 @@ export const DIALOG_INITIAL_STATE = {
   toggleDialogAlert: false
 }
 
-//  admin page
-export const ADMIN_PAGE_INITIAL_STATE = {
-  tableData: {
-    iTotalRecords: null,
-    tableData: []
-  }
-}
-
-//  physicians page
-export const PHYSICIANS_PAGE_INITIAL_STATE = {
-  tableData: {
-    iTotalRecords: null,
-    tableData: []
-  }
-}
-
-//  patients page
-export const PATIENTS_PAGE_INITIAL_STATE = {
-  tableData: {
-    iTotalRecords: null,
-    tableData: []
-  }
-}
-
-//  managers page
-export const MANAGERS_PAGE_INITIAL_STATE = {
-  tableData: {
-    iTotalRecords: null,
-    tableData: []
-  }
-}
-
-//  organizations page
-export const ORGANIZATIONS_PAGE_INITIAL_STATE = {
-  tableData: {
-    iTotalRecords: null,
-    tableData: []
-  }
-}
-
-//  viewers page
-export const VIEWERS_PAGE_INITIAL_STATE = {
-  tableData: {
-    iTotalRecords: null,
-    tableData: []
-  }
-}
-
-//  hospitals page
-export const HOSPITALS_PAGE_INITIAL_STATE = {
-  tableData: {
-    iTotalRecords: null,
-    tableData: []
-  }
-}
-
-//  supportWorker page
-export const SUPPORT_WORKER_PAGE_INITIAL_STATE = {
-  tableData: {
-    iTotalRecords: null,
-    tableData: []
-  }
-}
-
-//  HOW page
-export const HOW_PAGE_INITIAL_STATE = {
-  tableData: {
-    iTotalRecords: null,
-    tableData: []
-  }
-}
-
 //  navigation
 export const NAVIGATION_BAR_INITIAL_STATE = {
   navigationBar: []
 }
 
-//  overview page
-export const OVERVIEW_PAGE_INITIAL_STATE = {
-  DataLoaded: false,
-  Admins: null,
-  BillingInfo: '',
-  DurationOfContract: null,
-  Hospitals: null,
-  Name: '',
-  NumberOfUsersAllowed: null,
-  PatientCount: null,
-  Physicians: null,
-  SurgeriesCount: 0,
-  billingAddress: null,
-  billingEmail: null,
-  billingName: null,
-  billingPhone: null,
-  primaryAddress: null,
-  primaryEmail: null,
-  primaryName: null,
-  primaryPhone: null,
-  contacts: null
-}
-
 export const INITIAL_STATE = {
   //  auth
   auth: AUTH_INITIAL_STATE,
-
-  //  pages
-  adminPage: ADMIN_PAGE_INITIAL_STATE,
-  physiciansPage: PHYSICIANS_PAGE_INITIAL_STATE,
-  overviewPage: OVERVIEW_PAGE_INITIAL_STATE,
-  patientsPage: PATIENTS_PAGE_INITIAL_STATE,
-  managersPage: MANAGERS_PAGE_INITIAL_STATE,
-  HOWPage: HOW_PAGE_INITIAL_STATE,
-  organizationsPage: ORGANIZATIONS_PAGE_INITIAL_STATE,
-  viewersPage: VIEWERS_PAGE_INITIAL_STATE,
-  hospitalsPage: HOSPITALS_PAGE_INITIAL_STATE,
-  supportWorkerPage: SUPPORT_WORKER_PAGE_INITIAL_STATE,
 
   //  overall
   app: APP_INITIAL_STATE,

@@ -1,4 +1,4 @@
-export const actionTypes: any = {
+export const actionTypes = {
   //  auth
   LOGIN_SUCCESS: 'LOGIN_SUCCESS',
   LOGOUT_SUCCESS: 'LOGOUT_SUCCESS',

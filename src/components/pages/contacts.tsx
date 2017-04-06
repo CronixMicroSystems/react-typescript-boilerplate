@@ -1,4 +1,5 @@
 import * as React from 'react'
+import * as Redux from 'redux'
 import {connect} from 'react-redux'
 import {ValidateGroup} from 'react-validate'
 import {I18n} from 'react-redux-i18n'
@@ -6,9 +7,9 @@ import {Grid, Row, Col} from 'react-bootstrap'
 import GoogleMap from 'google-map-react'
 import Paper from 'material-ui/Paper'
 import RaisedButton from 'material-ui/RaisedButton'
-import TemplateInput from '../components/templateInput'
+import {TemplateInput} from '../components/templateInput'
 
-import MyGreatPlace from './componentsPages/contactsMarker'
+import {MyGreatPlace} from './componentsPages/contactsMarker'
 import {actionChangeHeaderTitle, actionChangeNavigationBar} from '../../actions'
 import {ValidatorError, ValidatorPhone, ValidatorMessage, ValidatorLastName, ValidatorFirstName} from '../overall/validators'
 
@@ -33,6 +34,17 @@ const mapDispatchToProps = (dispatch: Redux.Dispatch<any>): ConnectedDispatch =>
 })
 
 class ContactsComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
+
+  constructor (props) {
+    super(props)
+    this.state = {
+      FirstName: '',
+      LastName: '',
+      Phone: '',
+      Message: '',
+      Errors: []
+    }
+  }
 
   componentWillMount () {
     this.props.actionChangeHeaderTitleLocal(I18n.t('ContactsPage.namePage'))
@@ -163,7 +175,7 @@ class ContactsComponent extends React.Component<ConnectedState & ConnectedDispat
                     </Row>
                     <Row >
                       <Col lg={6}>
-                        <h4>Sales Info & Inquiries</h4>
+                        <h4>Sales Info and Inquiries</h4>
                         <p>Toll-Free: 800-838-8771</p>
                         <p>Email: info@achieve3000.com</p>
                       </Col>
@@ -186,4 +198,4 @@ class ContactsComponent extends React.Component<ConnectedState & ConnectedDispat
     )
   }
 }
-export const Contacts: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(ContactsComponent)
+export const Contacts: any = connect(mapStateToProps, mapDispatchToProps)(ContactsComponent)

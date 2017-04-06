@@ -2,8 +2,8 @@ import * as React from 'react'
 import {connect} from 'react-redux'
 import {Grid, Row, Col} from 'react-bootstrap'
 import {IndexLinkContainer} from 'react-router-bootstrap'
-import MyImage from '../overall/my_image'
-import MyRaisedButton from '../overall/my_raised_button'
+import {MyImage} from '../overall/my_image'
+import {MyRaisedButton} from '../overall/my_raised_button'
 import {deepOrange500} from 'material-ui/styles/colors'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
@@ -70,4 +70,4 @@ class NotFoundComponent extends React.Component<ConnectedState & ConnectedDispat
     )
   }
 }
-export const NotFound: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(NotFoundComponent)
+export const NotFound: any = connect(mapStateToProps, mapDispatchToProps)(NotFoundComponent)

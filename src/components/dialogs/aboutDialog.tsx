@@ -1,4 +1,5 @@
 import * as React from 'react'
+import * as Redux from 'redux'
 import { connect } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
 import Dialog from 'material-ui/Dialog'

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import * as Redux from 'redux'
 import {connect} from 'react-redux'
 import {teal50} from 'material-ui/styles/colors'
 import {I18n} from 'react-redux-i18n'
@@ -9,10 +10,10 @@ import OverscanIcon from 'material-ui/svg-icons/action/settings-overscan'
 import LanguageIcon from 'material-ui/svg-icons/action/language'
 import IconMenu from 'material-ui/IconMenu'
 import MenuItem from 'material-ui/MenuItem'
-import screenfull from 'screenfull'
+import screenfull = require('screenfull')
 
-import MyListItem from '../../overall/my_list_item'
-import LinkNav from '../../overall/my_link_nav'
+import {MyListItem} from '../../overall/my_list_item'
+import {MyLinkNav} from '../../overall/my_link_nav'
 import {actionChangeLanguage} from '../../../actions'
 
 interface OwnProps {}
@@ -32,7 +33,7 @@ const mapDispatchToProps = (dispatch: Redux.Dispatch<any>): ConnectedDispatch =>
 
 class RightBarComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
 
-  onFullScreen () { screenfull.enabled &&screenfull.toggle() }
+  onFullScreen () { screenfull.enabled && screenfull.toggle() }
   fnChangeLanguage (locale) { this.props.actionChangeLanguageLocal(locale) }
 
   public render () {
@@ -46,7 +47,7 @@ class RightBarComponent extends React.Component<ConnectedState & ConnectedDispat
         label: I18n.t('Languages.en-US')
       }
     ]
-    let {locale} = this.props.i18n
+    let locale: any = this.props.i18n.locale
     return (
       <div className="header__right-bar">
         <IconMenu
@@ -62,12 +63,12 @@ class RightBarComponent extends React.Component<ConnectedState & ConnectedDispat
             if (obj.name === locale) {
               return (
                 <MenuItem className="header__language-bar_active" key={index}
-                  onClick={() => this.fnChangeLanguage(obj.name).bind(this)}
+                  onClick={() => this.fnChangeLanguage(obj.name)}
                   primaryText={obj.label}/>
               )
             } else {
               return (
-                <MenuItem key={index} onClick={() => this.fnChangeLanguage(obj.name).bind(this)}
+                <MenuItem key={index} onClick={() => this.fnChangeLanguage(obj.name)}
                   primaryText={obj.label}/>
               )
             }
@@ -89,20 +90,20 @@ class RightBarComponent extends React.Component<ConnectedState & ConnectedDispat
           targetOrigin={{horizontal: 'right', vertical: 'top'}}
         >
           <MenuItem className="user-tool__menu-item-wrap" children={
-            <LinkNav to={'/profile'}>
+            <MyLinkNav to={'/profile'}>
               <MyListItem primaryText={I18n.t('HeaderTools.toolsMenuItemProfile')}/>
-            </LinkNav>
+            </MyLinkNav>
           }/>
           <MenuItem className="user-tool__menu-item-wrap" children={
-            <LinkNav to={'/settings'}>
+            <MyLinkNav to={'/settings'}>
               <MyListItem primaryText={I18n.t('HeaderTools.toolsMenuItemSettings')}/>
-            </LinkNav>
+            </MyLinkNav>
           }/>
           <Divider />
           <MenuItem className="user-tool__menu-item-wrap" children={
-            <LinkNav to={'/logout'}>
+            <MyLinkNav to={'/logout'}>
               <MyListItem primaryText={I18n.t('HeaderTools.toolsMenuItemLogout')}/>
-            </LinkNav>
+            </MyLinkNav>
           }/>
         </IconMenu>
       </div>

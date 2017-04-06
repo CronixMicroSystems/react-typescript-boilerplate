@@ -114,4 +114,4 @@ class AppComponent extends React.Component<ConnectedState & ConnectedDispatch & 
     )
   }
 }
-export const App: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(AppComponent)
+export const App: any = connect(mapStateToProps, mapDispatchToProps)(AppComponent)

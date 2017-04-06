@@ -1,4 +1,4 @@
-import validator from 'validator'
+import * as validator from 'validator'
 
 export function ValidatorError (name, status, err) {
   !status && err.indexOf(name) === -1 ? err.push(name) : ''

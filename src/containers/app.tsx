@@ -1,9 +1,9 @@
 import * as React from 'react'
 import * as Redux from 'redux'
 import {connect} from 'react-redux'
-import Header from '../components/header'
-import SidebarContent from '../components/sidebar'
-import Workarea from '../components/workarea'
+import {Header} from '../components/header'
+import {SidebarContent} from '../components/sidebar'
+import {Workarea} from '../components/workarea'
 import {history} from '../store/index'
 import {Grid} from 'react-bootstrap'
 import Sidebar from 'react-sidebar'
@@ -12,7 +12,7 @@ import {actionToggleSidebar, actionToggleMobileSidebar, actionInitMQL} from '../
 import {deepOrange500} from 'material-ui/styles/colors'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import AlertDialog from '../components/dialogs/alertDialog'
+import {AlertDialog} from '../components/dialogs/alertDialog'
 import {SIDEBAR_STYLE} from '../data/styles'
 
 const muiTheme = getMuiTheme({palette: {accent1Color: deepOrange500}})

@@ -1,11 +1,19 @@
-import React, {Component} from 'react'
+import * as React from 'react'
 import {connect} from 'react-redux'
 import {ListItem} from 'material-ui/List'
 
-class ListItems extends Component {
+interface OwnProps {}
+interface ConnectedState {}
+interface ConnectedDispatch {}
+interface OwnState {}
+
+const mapStateToProps = null
+const mapDispatchToProps = null
+
+class ListItemsComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
 
   render () {
-    let listProps = Object.assign({}, this.props)
+    let listProps: any = Object.assign({}, this.props)
 
     delete listProps.active
     delete listProps.toastr
@@ -16,4 +24,4 @@ class ListItems extends Component {
     return <ListItem {...listProps} />
   }
 }
-export default connect()(ListItems)
+export const ListItems: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(ListItemsComponent)

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import { connect } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
 import Dialog from 'material-ui/Dialog'
@@ -6,12 +6,26 @@ import FlatButton from 'material-ui/FlatButton'
 import {I18n} from 'react-redux-i18n'
 import { actionToggleDialogAbout } from '../../actions'
 
-class AboutDialog extends Component {
+interface OwnProps {}
+interface ConnectedState {
+  dialog: any
+}
+interface ConnectedDispatch {
+  actionToggleDialogAboutLocal: (status: boolean) => void
+}
+interface OwnState {}
 
-  open () { this.props.fnToggleDialogAbout(true) }
-  close () { this.props.fnToggleDialogAbout() }
+const mapStateToProps = ({dialog}): ConnectedState => ({dialog})
+const mapDispatchToProps = (dispatch: Redux.Dispatch<any>): ConnectedDispatch => ({
+  actionToggleDialogAboutLocal: (status: boolean) => { dispatch(actionToggleDialogAbout(status)) }
+})
 
-  render () {
+class AboutDialogComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
+
+  open () { this.props.actionToggleDialogAboutLocal(true) }
+  close () { this.props.actionToggleDialogAboutLocal(false) }
+
+  public render () {
     const ACTIONS = [
       <FlatButton
         key={1}
@@ -40,5 +54,4 @@ class AboutDialog extends Component {
   }
 }
 
-function mapStateToProps ({dialog}) { return {dialog} }
-export default connect(mapStateToProps, {fnToggleDialogAbout}, null, {withRef: true})(AboutDialog)
+export const AboutDialog: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps, null, {withRef: true})(AboutDialogComponent)

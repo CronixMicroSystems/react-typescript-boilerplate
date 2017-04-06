@@ -1,20 +1,28 @@
-import React, {Component} from 'react'
+import * as React from 'react'
 import {connect} from 'react-redux'
 
-class MyGreatPlace extends Component {
+interface OwnProps {
+  text: string
+}
+interface ConnectedState {}
+interface ConnectedDispatch {}
+interface OwnState {}
 
-  constructor (props) {
-    super(props)
-    this.K_WIDTH = 30
-    this.K_HEIGHT = 30
+const mapStateToProps = null
+const mapDispatchToProps = null
 
-    this.greatPlaceStyle = {
+class MyGreatPlaceComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
 
+  render () {
+    let K_WIDTH: number = 30
+    let K_HEIGHT: number = 30
+
+    let greatPlaceStyle:any = {
       position: 'absolute',
-      width: this.K_WIDTH,
-      height: this.K_HEIGHT,
-      left: -this.K_WIDTH / 2,
-      top: -this.K_HEIGHT / 2,
+      width: K_WIDTH,
+      height: K_HEIGHT,
+      left: -K_WIDTH / 2,
+      top: -K_HEIGHT / 2,
       '-moz-transform': 'rotate(-45deg)',
       '-ms-transform': 'rotate(-45deg)',
       '-webkit-transform': 'rotate(-45deg)',
@@ -29,14 +37,10 @@ class MyGreatPlace extends Component {
       fontWeight: 'bold',
       padding: 4
     }
-  }
-
-  render () {
     return (
-      <div style={this.greatPlaceStyle}>
+      <div style={greatPlaceStyle}>
         {this.props.text}
       </div>)
   }
 }
-function mapStateToProps () { return {} }
-export default connect(mapStateToProps)(MyGreatPlace)
+export const MyGreatPlace: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(MyGreatPlaceComponent)

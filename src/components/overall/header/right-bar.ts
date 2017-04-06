@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { teal50 } from 'material-ui/styles/colors'
-import { I18n } from 'react-redux-i18n'
+import * as React from 'react'
+import {connect} from 'react-redux'
+import {teal50} from 'material-ui/styles/colors'
+import {I18n} from 'react-redux-i18n'
 import Divider from 'material-ui/Divider'
 import IconButton from 'material-ui/IconButton'
 import AppsIcon from 'material-ui/svg-icons/navigation/apps'
@@ -13,21 +13,29 @@ import screenfull from 'screenfull'
 
 import MyListItem from '../../overall/my_list_item'
 import LinkNav from '../../overall/my_link_nav'
-import { fnChangeLanguage } from '../../../actions'
+import {actionChangeLanguage} from '../../../actions'
 
-class RightBar extends Component {
+interface OwnProps {}
+interface ConnectedState {
+  app: any,
+  i18n: any
+}
+interface ConnectedDispatch {
+  actionChangeLanguageLocal: (locale: string) => void
+}
+interface OwnState {}
 
-  onFullScreen () {
-    if (screenfull.enabled) {
-      screenfull.toggle()
-    }
-  }
+const mapStateToProps = ({app, i18n}): ConnectedState => ({app, i18n})
+const mapDispatchToProps = (dispatch: Redux.Dispatch<any>): ConnectedDispatch => ({
+  actionChangeLanguageLocal: (locale: string) => { dispatch(actionChangeLanguage(locale)) }
+})
 
-  fnChangeLanguage (locale) {
-    this.props.fnChangeLanguage(locale)
-  }
+class RightBarComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
 
-  render () {
+  onFullScreen () { screenfull.enabled &&screenfull.toggle() }
+  fnChangeLanguage (locale) { this.props.actionChangeLanguageLocal(locale) }
+
+  public render () {
     const LANGUAGE_LIST = [
       {
         name: 'en-CA',
@@ -43,9 +51,7 @@ class RightBar extends Component {
       <div className="header__right-bar">
         <IconMenu
           iconButtonElement={
-            <IconButton
-              style={{}}
-              tooltip={I18n.t('HeaderTools.labelLanguage')}>
+            <IconButton tooltip={I18n.t('HeaderTools.labelLanguage')}>
               <LanguageIcon color={teal50}/>
             </IconButton>
           }
@@ -56,27 +62,25 @@ class RightBar extends Component {
             if (obj.name === locale) {
               return (
                 <MenuItem className="header__language-bar_active" key={index}
-                  onClick={() => ::this.fnChangeLanguage(obj.name)}
+                  onClick={() => this.fnChangeLanguage(obj.name).bind(this)}
                   primaryText={obj.label}/>
               )
             } else {
               return (
-                <MenuItem key={index} onClick={() => ::this.fnChangeLanguage(obj.name)}
+                <MenuItem key={index} onClick={() => this.fnChangeLanguage(obj.name).bind(this)}
                   primaryText={obj.label}/>
               )
             }
           })}
         </IconMenu>
         <IconButton
-          style={{}}
-          onClick={::this.onFullScreen}
+          onClick={this.onFullScreen.bind(this)}
           tooltip={I18n.t('HeaderTools.labelFullScreen')}>
           <OverscanIcon color={teal50}/>
         </IconButton>
         <IconMenu
           iconButtonElement={
             <IconButton
-              style={{}}
               tooltip={I18n.t('HeaderTools.labelTools')}>
               <AppsIcon color={teal50}/>
             </IconButton>
@@ -105,5 +109,4 @@ class RightBar extends Component {
     )
   }
 }
-function mapStateToProps ({app, i18n}) { return {app, i18n} }
-export default connect(mapStateToProps, { fnChangeLanguage })(RightBar)
+export const RightBar: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(RightBarComponent)

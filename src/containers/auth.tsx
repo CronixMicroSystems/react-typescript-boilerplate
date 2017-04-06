@@ -5,9 +5,9 @@ import {deepOrange500} from 'material-ui/styles/colors'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import ReduxToastr from 'react-redux-toastr'
-import AlertDialog from '../components/dialogs/alertDialog'
+import {AlertDialog} from '../components/dialogs/alertDialog'
 
-let muiTheme = getMuiTheme({
+const muiTheme = getMuiTheme({
   palette: {
     accent1Color: deepOrange500
   }

@@ -1,14 +1,14 @@
 import * as React from 'react'
-import { connect } from 'react-redux'
-import { blue50 } from 'material-ui/styles/colors'
-import { LinkContainer } from 'react-router-bootstrap'
-import { Button } from 'react-bootstrap'
+import {connect} from 'react-redux'
+import {blue50} from 'material-ui/styles/colors'
+import {LinkContainer} from 'react-router-bootstrap'
+import {Button} from 'react-bootstrap'
 import RightBar from './overall/header/right-bar'
 import AppBar from 'material-ui/AppBar'
 import IconButton from 'material-ui/IconButton'
 import NavigationOpen from 'material-ui/svg-icons/navigation/menu'
 import HelpIcon from 'material-ui/svg-icons/action/help-outline'
-import { actionToggleSidebar, actionToggleMobileSidebar, actionToggleDialogAbout } from '../actions'
+import {actionToggleSidebar, actionToggleMobileSidebar, actionToggleDialogAbout} from '../actions'
 
 const STYLES = { title: { cursor: 'pointer' } }
 
@@ -118,4 +118,4 @@ class NavigationComponent extends React.Component<ConnectedState & ConnectedDisp
     )
   }
 }
-export const Navigation: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(NavigationComponent)
+export const Header: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(NavigationComponent)

@@ -197,4 +197,4 @@ class SidebarComponent extends React.Component<ConnectedState & ConnectedDispatc
     )
   }
 }
-export const Sidebar: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(SidebarComponent)
+export const SidebarContent: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(SidebarComponent)

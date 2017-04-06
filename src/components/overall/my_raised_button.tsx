@@ -1,11 +1,19 @@
-import React, {Component} from 'react'
+import * as React from 'react'
 import {connect} from 'react-redux'
 import RaisedButton from 'material-ui/RaisedButton'
 
-class MyRaisedButton extends Component {
+interface OwnProps {}
+interface ConnectedState {}
+interface ConnectedDispatch {}
+interface OwnState {}
+
+const mapStateToProps = null
+const mapDispatchToProps = null
+
+class MyRaisedButtonComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
 
   render () {
-    let listProps = Object.assign({}, this.props)
+    let listProps: any = Object.assign({}, this.props)
 
     delete listProps.active
     delete listProps.toastr
@@ -16,4 +24,4 @@ class MyRaisedButton extends Component {
     return <RaisedButton {...listProps} />
   }
 }
-export default connect()(MyRaisedButton)
+export const MyRaisedButton: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(MyRaisedButtonComponent)

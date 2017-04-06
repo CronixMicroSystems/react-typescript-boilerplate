@@ -1,33 +1,42 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { ValidateGroup } from 'react-validate'
-import { I18n } from 'react-redux-i18n'
-import { Grid, Row, Col } from 'react-bootstrap'
+import * as React from 'react'
+import {connect} from 'react-redux'
+import {ValidateGroup} from 'react-validate'
+import {I18n} from 'react-redux-i18n'
+import {Grid, Row, Col} from 'react-bootstrap'
 import GoogleMap from 'google-map-react'
 import Paper from 'material-ui/Paper'
 import RaisedButton from 'material-ui/RaisedButton'
 import TemplateInput from '../components/templateInput'
 
 import MyGreatPlace from './componentsPages/contactsMarker'
-import { fnChangeHeaderTitle, fnChangeNavigationBar } from '../../actions'
-import { ValidatorError, ValidatorPhone, ValidatorMessage, ValidatorLastName, ValidatorFirstName } from '../overall/validators'
+import {actionChangeHeaderTitle, actionChangeNavigationBar} from '../../actions'
+import {ValidatorError, ValidatorPhone, ValidatorMessage, ValidatorLastName, ValidatorFirstName} from '../overall/validators'
 
-class Contacts extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
+interface OwnProps {}
+interface ConnectedState {}
+interface ConnectedDispatch {
+  actionChangeHeaderTitleLocal: (title: string) => void,
+  actionChangeNavigationBarLocal: (list: any[]) => void
+}
+interface OwnState {
+  FirstName: string,
+  LastName: string,
+  Phone: string,
+  Message: string,
+  Errors: string[]
+}
 
-  constructor (props) {
-    super(props)
-    this.state = {
-      FirstName: '',
-      LastName: '',
-      Phone: '',
-      Message: '',
-      Errors: []
-    }
-  }
+const mapStateToProps = null
+const mapDispatchToProps = (dispatch: Redux.Dispatch<any>): ConnectedDispatch => ({
+  actionChangeHeaderTitleLocal: (title: string) => { dispatch(actionChangeHeaderTitle(title)) },
+  actionChangeNavigationBarLocal: (list: any[]) => { dispatch(actionChangeNavigationBar(list)) }
+})
+
+class ContactsComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
 
   componentWillMount () {
-    this.props.fnChangeHeaderTitle(I18n.t('ContactsPage.namePage'))
-    this.props.fnChangeNavigationBar([
+    this.props.actionChangeHeaderTitleLocal(I18n.t('ContactsPage.namePage'))
+    this.props.actionChangeNavigationBarLocal([
       {
         name: 'Home',
         url: '/'
@@ -48,7 +57,7 @@ class Contacts extends React.Component<ConnectedState & ConnectedDispatch & OwnP
 
   fnError (name, status) { this.setState({Errors: ValidatorError(name, status, this.state.Errors)}) }
 
-  render () {
+  public render () {
     return (
       <div className="contactPage">
         <div style={{padding: '15px 15px 0 15px', margin: '0 0 15px 0'}}>
@@ -62,7 +71,7 @@ class Contacts extends React.Component<ConnectedState & ConnectedDispatch & OwnP
                 options={{ scrollwheel: false }}
                 defaultCenter={{lat: 59.938043, lng: 30.337157}}
                 defaultZoom={9}>
-                <MyGreatPlace lat={59.955413} lng={30.337844} text={''} /* Kreyser Avrora */ />
+                <MyGreatPlace lat={59.955413} lng={30.337844} text=""/>
               </GoogleMap>
             </div>
           }/>
@@ -81,8 +90,8 @@ class Contacts extends React.Component<ConnectedState & ConnectedDispatch & OwnP
                         name="FirstName"
                         errorText="The first name must be more than 0 and less than 64 characters long"
                         value={this.state.FirstName}
-                        onChange={::this.fnFirstNameChange}
-                        onError={::this.fnError}
+                        onChange={this.fnFirstNameChange.bind(this)}
+                        onError={this.fnError.bind(this)}
                         fnValidator={ValidatorFirstName}
                         fullWidth/>
                       <TemplateInput
@@ -91,8 +100,8 @@ class Contacts extends React.Component<ConnectedState & ConnectedDispatch & OwnP
                         name="LastName"
                         errorText="The last name must be more than 0 and less than 64 characters long"
                         value={this.state.LastName}
-                        onChange={::this.fnLastNameChange}
-                        onError={::this.fnError}
+                        onChange={this.fnLastNameChange.bind(this)}
+                        onError={this.fnError.bind(this)}
                         fnValidator={ValidatorLastName}
                         fullWidth/>
                       <TemplateInput
@@ -101,8 +110,8 @@ class Contacts extends React.Component<ConnectedState & ConnectedDispatch & OwnP
                         name="Phone"
                         errorText="The Phone must be more than 6 and less than 12 characters long"
                         value={this.state.Phone}
-                        onChange={::this.fnPhoneChange}
-                        onError={::this.fnError}
+                        onChange={this.fnPhoneChange.bind(this)}
+                        onError={this.fnError.bind(this)}
                         fnValidator={ValidatorPhone}
                         fullWidth/>
                       <TemplateInput
@@ -111,8 +120,8 @@ class Contacts extends React.Component<ConnectedState & ConnectedDispatch & OwnP
                         name="Message"
                         errorText="The Message must be more than 6 and less than 256 characters long"
                         value={this.state.LastName}
-                        onChange={::this.fnMessageChange}
-                        onError={::this.fnError}
+                        onChange={this.fnMessageChange.bind(this)}
+                        onError={this.fnError.bind(this)}
                         fnValidator={ValidatorMessage}
                         multiLine
                         rows={2}
@@ -124,7 +133,7 @@ class Contacts extends React.Component<ConnectedState & ConnectedDispatch & OwnP
                         disabled={this.state.Errors.length !== 0}
                         label="Send"
                         className="pull-right"
-                        onClick={::this.fnSend}
+                        onClick={this.fnSend.bind(this)}
                       />
                     </div>
                   </div>
@@ -177,5 +186,4 @@ class Contacts extends React.Component<ConnectedState & ConnectedDispatch & OwnP
     )
   }
 }
-function mapStateToProps () { return {} }
-export default connect(mapStateToProps, { fnChangeHeaderTitle, fnChangeNavigationBar })(Contacts)
+export const Contacts: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(ContactsComponent)

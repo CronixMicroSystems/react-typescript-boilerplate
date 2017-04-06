@@ -3,9 +3,9 @@ import {connect} from 'react-redux'
 import ScrollArea = require('react-scrollbar')
 import ReduxToastr from 'react-redux-toastr'
 
-import Footer from './footer'
+import {Footer} from './footer'
 import GoTopBtn from './overall/go_top'
-import AboutDialog from './dialogs/aboutDialog'
+import {AboutDialog} from './dialogs/aboutDialog'
 
 interface OwnProps {}
 interface ConnectedState {}

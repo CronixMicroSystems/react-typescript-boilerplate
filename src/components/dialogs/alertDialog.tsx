@@ -1,16 +1,30 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import { connect } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
 import Dialog from 'material-ui/Dialog'
 import FlatButton from 'material-ui/FlatButton'
 import {I18n} from 'react-redux-i18n'
 
-import { fnSendReport, fnToggleDialogAlert } from '../../actions'
+import { actionToggleDialogAlert } from '../../actions'
 
-class AlertDialog extends Component {
-  onCloseConfirmDialog () { this.props.fnToggleDialogAlert() }
+interface OwnProps {}
+interface ConnectedState {
+  dialog: any
+}
+interface ConnectedDispatch {
+  actionToggleDialogAlertLocal: (status?: boolean, error?: string, text?: string, where?: string) => void
+}
+interface OwnState {}
+
+const mapStateToProps = ({dialog}): ConnectedState => ({dialog})
+const mapDispatchToProps = (dispatch: Redux.Dispatch<any>): ConnectedDispatch => ({
+  actionToggleDialogAlertLocal: (status?: boolean, error?: string, text?: string, where?: string) => { dispatch(actionToggleDialogAlert(status, error, text, where)) }
+})
+
+
+class AlertDialogComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
+  onCloseConfirmDialog () { this.props.actionToggleDialogAlertLocal(false) }
   onReloadConfirmDialog () { window.location.reload() }
-  onReport () { this.props.fnSendReport(`${this.props.dialog.dialogAlertWhere}  ${this.props.dialog.dialogAlertText}`) }
 
   render () {
     let err = this.props.dialog.dialogAlertError
@@ -19,37 +33,31 @@ class AlertDialog extends Component {
 
     const actions = err ? [
       <FlatButton
-        key={1}
-        label={I18n.t('Buttons.Report')}
-        primary
-        onTouchTap={::this.onReport}
-        />,
-      <FlatButton
         key={2}
         label={I18n.t('Buttons.Reload')}
         primary
-        onTouchTap={::this.onReloadConfirmDialog}
+        onTouchTap={this.onReloadConfirmDialog.bind(this)}
         />,
       <FlatButton
         key={3}
         label={I18n.t('Buttons.Close')}
         primary
         keyboardFocused
-        onTouchTap={::this.onCloseConfirmDialog}
+        onTouchTap={this.onCloseConfirmDialog.bind(this)}
         />
     ] : [
       <FlatButton
         key={1}
         label={I18n.t('Buttons.Reload')}
         primary
-        onTouchTap={::this.onReloadConfirmDialog}
+        onTouchTap={this.onReloadConfirmDialog.bind(this)}
         />,
       <FlatButton
         key={2}
         label={I18n.t('Buttons.Close')}
         primary
         keyboardFocused
-        onTouchTap={::this.onCloseConfirmDialog}
+        onTouchTap={this.onCloseConfirmDialog.bind(this)}
         />
     ]
 
@@ -59,7 +67,7 @@ class AlertDialog extends Component {
         actions={actions}
         modal
         open={this.props.dialog.toggleDialogAlert}
-        onRequestClose={::this.onReloadConfirmDialog}
+        onRequestClose={this.onReloadConfirmDialog.bind(this)}
       >
         <Row>
           <Col xs={12}>
@@ -70,6 +78,4 @@ class AlertDialog extends Component {
     )
   }
 }
-
-function mapStateToProps ({dialog}) { return {dialog} }
-export default connect(mapStateToProps, { fnSendReport, fnToggleDialogAlert }, null, {withRef: true})(AlertDialog)
+export const AlertDialog: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps, null, {withRef: true})(AlertDialogComponent)

@@ -1,19 +1,32 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { fnChangeHeaderTitle, fnChangeNavigationBar } from '../../actions'
-import { I18n } from 'react-redux-i18n'
+import * as React from 'react'
+import {connect} from 'react-redux'
+import {I18n} from 'react-redux-i18n'
+import { actionChangeHeaderTitle, actionChangeNavigationBar } from '../../actions'
 
-class Email extends Component {
+interface OwnProps {}
+interface ConnectedState {}
+interface ConnectedDispatch {
+  actionChangeHeaderTitleLocal: (title: string) => void,
+  actionChangeNavigationBarLocal: (list: any[]) => void
+}
+interface OwnState {}
+
+const mapStateToProps = null
+const mapDispatchToProps = (dispatch: Redux.Dispatch<any>): ConnectedDispatch => ({
+  actionChangeHeaderTitleLocal: (title: string) => { dispatch(actionChangeHeaderTitle(title)) },
+  actionChangeNavigationBarLocal: (list: any[]) => { dispatch(actionChangeNavigationBar(list)) }
+})
+class EmailComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
 
   componentWillMount () {
-    this.props.fnChangeHeaderTitle(I18n.t('EmailPage.namePage'))
-    this.props.fnChangeNavigationBar([
+    this.props.actionChangeHeaderTitleLocal(I18n.t('ProfilePage.namePage'))
+    this.props.actionChangeNavigationBarLocal([
       {
         name: 'Home',
         url: '/'
       },
       {
-        name: 'Email',
+        name: 'Profile',
         url: ''
       }
     ])
@@ -21,9 +34,8 @@ class Email extends Component {
 
   render () {
     return (
-      <div className="wrapPage"/>
+        <div className="profilePage"/>
     )
   }
 }
-function mapStateToProps () { return {} }
-export default connect(mapStateToProps, { fnChangeHeaderTitle, fnChangeNavigationBar })(Email)
+export const Email: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(EmailComponent)

@@ -1,17 +1,18 @@
-import React, {Component} from 'react'
+import * as React from 'react'
 import {connect} from 'react-redux'
 
-class Footer extends Component {
+interface OwnProps {}
+interface ConnectedState {}
+interface ConnectedDispatch {}
+interface OwnState {
+  version: 'v1.0.0'
+}
 
-  constructor (props) {
-    super(props)
+const mapStateToProps = null
+const mapDispatchToProps = null
 
-    this.state = {
-      version: '1.0.0'
-    }
-  }
-
-  render () {
+class FooterComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
+  public render () {
     return (
       <footer className="site-footer clear-fix">
         <div className="pull-left">Copyright © 2017</div>
@@ -21,5 +22,4 @@ class Footer extends Component {
   }
 }
 
-function mapStateToProps () { return {} }
-export default connect(mapStateToProps)(Footer)
+export const Footer: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(FooterComponent)

@@ -1,25 +1,32 @@
-import React, {Component} from 'react'
+import * as React from 'react'
 import {connect} from 'react-redux'
-import {fnChangeHeaderTitle, fnChangeNavigationBar} from '../../actions'
 import {I18n} from 'react-redux-i18n'
+import { actionChangeHeaderTitle, actionChangeNavigationBar } from '../../actions'
 
-class FAQ extends Component {
+interface OwnProps {}
+interface ConnectedState {}
+interface ConnectedDispatch {
+  actionChangeHeaderTitleLocal: (title: string) => void,
+  actionChangeNavigationBarLocal: (list: any[]) => void
+}
+interface OwnState {}
 
-  constructor (props) {
-    super(props)
-    this.fnChangeHeaderTitle = this.props.fnChangeHeaderTitle
-    this.fnChangeNavigationBar = this.props.fnChangeNavigationBar
-  }
+const mapStateToProps = null
+const mapDispatchToProps = (dispatch: Redux.Dispatch<any>): ConnectedDispatch => ({
+  actionChangeHeaderTitleLocal: (title: string) => { dispatch(actionChangeHeaderTitle(title)) },
+  actionChangeNavigationBarLocal: (list: any[]) => { dispatch(actionChangeNavigationBar(list)) }
+})
+class FAQComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
 
   componentWillMount () {
-    this.fnChangeHeaderTitle(I18n.t('FAQPage.namePage'))
-    this.fnChangeNavigationBar([
+    this.props.actionChangeHeaderTitleLocal(I18n.t('ProfilePage.namePage'))
+    this.props.actionChangeNavigationBarLocal([
       {
         name: 'Home',
         url: '/'
       },
       {
-        name: 'FAQ',
+        name: 'Profile',
         url: ''
       }
     ])
@@ -27,11 +34,8 @@ class FAQ extends Component {
 
   render () {
     return (
-      <div className="p-lg wrapPage"/>
+        <div className="profilePage"/>
     )
   }
 }
-
-function mapStateToProps () { return {} }
-
-export default connect(mapStateToProps, { fnChangeHeaderTitle, fnChangeNavigationBar })(FAQ)
+export const FAQ: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(FAQComponent)

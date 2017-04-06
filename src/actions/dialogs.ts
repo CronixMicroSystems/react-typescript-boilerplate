@@ -9,7 +9,7 @@ export function fnToggleDialogAlert (status = false, error, text, where) {
     where
   }
 }
-export function fnToggleDialogAbout (status = false) {
+export function actionToggleDialogAbout (status = false) {
   return {
     type: types.ABOUT_DIALOG_PREVIEW,
     status

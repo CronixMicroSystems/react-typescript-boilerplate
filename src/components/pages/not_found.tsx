@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import * as React from 'react'
 import {connect} from 'react-redux'
 import {Grid, Row, Col} from 'react-bootstrap'
 import {IndexLinkContainer} from 'react-router-bootstrap'
@@ -10,24 +10,26 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Paper from 'material-ui/Paper'
 import {I18n, Translate} from 'react-redux-i18n'
 
-const LOGO = require('../../images/header_logo.jpg')
-
-class NotFound extends Component {
-
-  constructor (props) {
-    super(props)
-
-    this.muiTheme = getMuiTheme({
-      palette: {
-        accent1Color: deepOrange500
-      }
-    })
+const muiTheme: any = getMuiTheme({
+  palette: {
+    accent1Color: deepOrange500
   }
+})
 
-  render () {
+interface OwnProps {}
+interface ConnectedState {}
+interface ConnectedDispatch {}
+interface OwnState {}
+
+const mapStateToProps = null
+const mapDispatchToProps = null
+
+class NotFoundComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
+
+  public render () {
     const NOT_FOUND = (<div>
       <IndexLinkContainer to={'/'}>
-        <MyImage src={LOGO}
+        <MyImage src={'../../images/header_logo.jpg'}
           className="not-found__brand"
           responsive/>
       </IndexLinkContainer>
@@ -49,7 +51,7 @@ class NotFound extends Component {
     </div>)
 
     return (
-      <MuiThemeProvider muiTheme={this.muiTheme}>
+      <MuiThemeProvider muiTheme={muiTheme}>
         <Grid fluid className="not-found">
           <Row className="not-found__row">
             <Col xs={8}
@@ -68,5 +70,4 @@ class NotFound extends Component {
     )
   }
 }
-function mapStateToProps () { return {} }
-export default connect(mapStateToProps)(NotFound)
+export const NotFound: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(NotFoundComponent)

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import { connect } from 'react-redux'
 import { blue50 } from 'material-ui/styles/colors'
 import { LinkContainer } from 'react-router-bootstrap'
@@ -8,26 +8,44 @@ import AppBar from 'material-ui/AppBar'
 import IconButton from 'material-ui/IconButton'
 import NavigationOpen from 'material-ui/svg-icons/navigation/menu'
 import HelpIcon from 'material-ui/svg-icons/action/help-outline'
-
-import { fnToggleSidebar, fnToggleMobileSidebar, fnToggleDialogAbout } from '../actions'
+import { actionToggleSidebar, actionToggleMobileSidebar, actionToggleDialogAbout } from '../actions'
 
 const STYLES = { title: { cursor: 'pointer' } }
 
-class Navigation extends Component {
+interface OwnProps {}
+interface ConnectedState {
+  app: any,
+  navigationBar: any
+}
+interface ConnectedDispatch {
+  actionToggleSidebarLocal: (status: boolean) => void,
+  actionToggleMobileSidebarLocal: (status: boolean) => void,
+  actionToggleDialogAboutLocal: (status: boolean) => void
+}
+interface OwnState {}
+
+const mapStateToProps = ({app, navigationBar}): ConnectedState => ({app, navigationBar})
+const mapDispatchToProps = (dispatch: Redux.Dispatch<any>): ConnectedDispatch => ({
+  actionToggleSidebarLocal: (status: boolean) => { dispatch(actionToggleSidebar(status)) },
+  actionToggleMobileSidebarLocal: (status: boolean) => { dispatch(actionToggleMobileSidebar(status)) },
+  actionToggleDialogAboutLocal: (status: boolean) => { dispatch(actionToggleDialogAbout(status)) }
+})
+
+class NavigationComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
 
   onSetSidebarToggle () {
     if (this.props.app.mql.matches) {
-      this.props.fnToggleMobileSidebar(false)
-      this.props.fnToggleSidebar(!this.props.app.sidebarStatus)
+      this.props.actionToggleMobileSidebarLocal(false)
+      this.props.actionToggleSidebarLocal(!this.props.app.sidebarStatus)
     } else {
-      this.props.fnToggleSidebar(false)
-      this.props.fnToggleMobileSidebar(!this.props.app.sidebarStatusMobile)
+      this.props.actionToggleSidebarLocal(false)
+      this.props.actionToggleMobileSidebarLocal(!this.props.app.sidebarStatusMobile)
     }
   }
 
   render () {
-    let button = this.props.app.sidebarStatus ? <IconButton onClick={::this.onSetSidebarToggle}><NavigationOpen /></IconButton> : <IconButton onClick={::this.onSetSidebarToggle}><NavigationOpen /></IconButton>
-    const HEADER_TITLE = this.props.app.headerTitle
+    let button = this.props.app.sidebarStatus ? <IconButton onClick={this.onSetSidebarToggle.bind(this)}><NavigationOpen /></IconButton> : <IconButton onClick={this.onSetSidebarToggle.bind(this)}><NavigationOpen /></IconButton>
+    const HEADER_TITLE: string = this.props.app.headerTitle
 
     let titleContent = <span style={STYLES.title}>{HEADER_TITLE}</span>
     return (
@@ -90,7 +108,7 @@ class Navigation extends Component {
           })}
 
           <div className="header-navigation-bar__help-btn">
-            <IconButton onClick={() => this.props.fnToggleDialogAbout(true)}>
+            <IconButton onClick={() => this.props.actionToggleDialogAboutLocal(true)}>
               <HelpIcon color={blue50}/>
             </IconButton>
           </div>
@@ -100,5 +118,4 @@ class Navigation extends Component {
     )
   }
 }
-function mapStateToProps ({app, navigationBar}) { return {app, navigationBar} }
-export default connect(mapStateToProps, { fnToggleSidebar, fnToggleMobileSidebar, fnToggleDialogAbout })(Navigation)
+export const Navigation: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(NavigationComponent)

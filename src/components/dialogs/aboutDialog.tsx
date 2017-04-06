@@ -4,7 +4,7 @@ import { Row, Col } from 'react-bootstrap'
 import Dialog from 'material-ui/Dialog'
 import FlatButton from 'material-ui/FlatButton'
 import {I18n} from 'react-redux-i18n'
-import { fnToggleDialogAbout } from '../../actions'
+import { actionToggleDialogAbout } from '../../actions'
 
 class AboutDialog extends Component {
 

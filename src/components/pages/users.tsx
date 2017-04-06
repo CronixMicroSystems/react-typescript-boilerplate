@@ -1,13 +1,27 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import { connect } from 'react-redux'
 import { I18n } from 'react-redux-i18n'
-import { fnChangeHeaderTitle, fnChangeNavigationBar } from '../../actions'
+import { actionChangeHeaderTitle, actionChangeNavigationBar } from '../../actions'
 
-class Users extends Component {
+interface OwnProps {}
+interface ConnectedState {}
+interface ConnectedDispatch {
+  actionChangeHeaderTitleLocal: (title: string) => void,
+  actionChangeNavigationBarLocal: (list: any[]) => void
+}
+interface OwnState {}
+
+const mapStateToProps = null
+const mapDispatchToProps = (dispatch: Redux.Dispatch<any>): ConnectedDispatch => ({
+  actionChangeHeaderTitleLocal: (title: string) => { dispatch(actionChangeHeaderTitle(title)) },
+  actionChangeNavigationBarLocal: (list: any[]) => { dispatch(actionChangeNavigationBar(list)) }
+})
+
+class UsersComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
 
   componentDidMount () {
-    this.props.fnChangeHeaderTitle(I18n.t('UsersPage.namePage'))
-    this.props.fnChangeNavigationBar([
+    this.props.actionChangeHeaderTitleLocal(I18n.t('UsersPage.namePage'))
+    this.props.actionChangeNavigationBarLocal([
       {
         name: 'Home',
         url: '/'
@@ -25,5 +39,4 @@ class Users extends Component {
     )
   }
 }
-function mapStateToProps ({app}) { return {app} }
-export default connect(mapStateToProps, { fnChangeHeaderTitle, fnChangeNavigationBar })(Users)
+export const Users: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(UsersComponent)

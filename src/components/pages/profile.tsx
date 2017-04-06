@@ -1,13 +1,26 @@
-import React, {Component} from 'react'
+import * as React from 'react'
 import {connect} from 'react-redux'
-import {fnChangeHeaderTitle, fnChangeNavigationBar} from '../../actions'
 import {I18n} from 'react-redux-i18n'
+import { actionChangeHeaderTitle, actionChangeNavigationBar } from '../../actions'
 
-class Profile extends Component {
+interface OwnProps {}
+interface ConnectedState {}
+interface ConnectedDispatch {
+  actionChangeHeaderTitleLocal: (title: string) => void,
+  actionChangeNavigationBarLocal: (list: any[]) => void
+}
+interface OwnState {}
+
+const mapStateToProps = null
+const mapDispatchToProps = (dispatch: Redux.Dispatch<any>): ConnectedDispatch => ({
+  actionChangeHeaderTitleLocal: (title: string) => { dispatch(actionChangeHeaderTitle(title)) },
+  actionChangeNavigationBarLocal: (list: any[]) => { dispatch(actionChangeNavigationBar(list)) }
+})
+class ProfileComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
 
   componentWillMount () {
-    this.props.fnChangeHeaderTitle(I18n.t('ProfilePage.namePage'))
-    this.props.fnChangeNavigationBar([
+    this.props.actionChangeHeaderTitleLocal(I18n.t('ProfilePage.namePage'))
+    this.props.actionChangeNavigationBarLocal([
       {
         name: 'Home',
         url: '/'
@@ -25,5 +38,4 @@ class Profile extends Component {
     )
   }
 }
-function mapStateToProps ({history, app, auth, user}) { return {activity: history.activity, app, auth, user} }
-export default connect(mapStateToProps, { fnChangeHeaderTitle, fnChangeNavigationBar })(Profile)
+export const Profile: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(ProfileComponent)

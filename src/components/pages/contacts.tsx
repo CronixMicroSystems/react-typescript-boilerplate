@@ -12,7 +12,7 @@ import MyGreatPlace from './componentsPages/contactsMarker'
 import { fnChangeHeaderTitle, fnChangeNavigationBar } from '../../actions'
 import { ValidatorError, ValidatorPhone, ValidatorMessage, ValidatorLastName, ValidatorFirstName } from '../overall/validators'
 
-class Contacts extends Component {
+class Contacts extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
 
   constructor (props) {
     super(props)

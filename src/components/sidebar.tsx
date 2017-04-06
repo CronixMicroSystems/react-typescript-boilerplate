@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import { connect } from 'react-redux'
 import { List } from 'material-ui/List'
 import { IndexLinkContainer } from 'react-router-bootstrap'
@@ -19,26 +19,43 @@ import Paper from 'material-ui/Paper'
 import Subheader from 'material-ui/Subheader'
 import IconButton from 'material-ui/IconButton'
 import NavigationClose from 'material-ui/svg-icons/navigation/close'
-import ScrollArea from 'react-scrollbar'
+import ScrollArea = require('react-scrollbar')
 import { ROLES } from '../data/enums'
 
 import MyListItem from './overall/my_list_item'
 import LinkNav from './overall/my_link_nav'
-import { fnToggleSidebar, fnToggleMobileSidebar } from '../actions'
+import { actionToggleSidebar, actionToggleMobileSidebar } from '../actions'
 
-class Sidebar extends Component {
+interface OwnProps {}
+interface ConnectedState {
+  app: any,
+  auth: any
+}
+interface ConnectedDispatch {
+  actionToggleSidebarLocal: (status: boolean) => void,
+  actionToggleMobileSidebarLocal: (status: boolean) => void
+}
+interface OwnState {}
+
+const mapStateToProps = ({app, auth}): ConnectedState => ({app, auth})
+const mapDispatchToProps = (dispatch: Redux.Dispatch<any>): ConnectedDispatch => ({
+  actionToggleSidebarLocal: (status: boolean) => { dispatch(actionToggleSidebar(status)) },
+  actionToggleMobileSidebarLocal: (status: boolean) => { dispatch(actionToggleMobileSidebar(status)) }
+})
+
+class SidebarComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
 
   onSetSidebarToggle () {
     if (this.props.app.mql.matches) {
-      this.props.fnToggleSidebar(!this.props.app.sidebarStatus)
-      this.props.fnToggleMobileSidebar(false)
+      this.props.actionToggleSidebarLocal(!this.props.app.sidebarStatus)
+      this.props.actionToggleMobileSidebarLocal(false)
     } else {
-      this.props.fnToggleSidebar(false)
-      this.props.fnToggleMobileSidebar(!this.props.app.sidebarStatusMobile)
+      this.props.actionToggleSidebarLocal(false)
+      this.props.actionToggleMobileSidebarLocal(!this.props.app.sidebarStatusMobile)
     }
   }
 
-  render () {
+  public render () {
     let nav = null
     if (this.props.app.mql.matches) {
       nav = (<IndexLinkContainer to={'/'}>
@@ -55,7 +72,7 @@ class Sidebar extends Component {
         </IndexLinkContainer>
         <IconButton
           className="sidebar-main__toggle-slider-btn"
-          onClick={::this.onSetSidebarToggle}>
+          onClick={this.onSetSidebarToggle.bind(this)}>
           <NavigationClose color={teal50}/>
         </IconButton>
       </div>)
@@ -139,14 +156,18 @@ class Sidebar extends Component {
           <div>
             <div className="menu-main">
               <List>
-                <Subheader className="sidebar-main__text-color">
-                  <Translate value="Sidebar.generalMenuLabel"/>
-                </Subheader>
+                <div className="sidebar-main__text-color">
+                  <Subheader>
+                    <Translate value="Sidebar.generalMenuLabel"/>
+                  </Subheader>
+                </div>
                 {usersContent}
                 {mailContent}
-                <Subheader className="sidebar-main__text-color">
-                  <Translate value="Sidebar.moreMenuLabel"/>
-                </Subheader>
+                <div className="sidebar-main__text-color">
+                  <Subheader>
+                    <Translate value="Sidebar.moreMenuLabel"/>
+                  </Subheader>
+                </div>
                 <MyListItem
                   className="sidebar-main__text-color"
                   primaryText={I18n.t('Sidebar.settingsMenuItem')}
@@ -176,5 +197,4 @@ class Sidebar extends Component {
     )
   }
 }
-function mapStateToProps ({app, auth}) { return {app, auth} }
-export default connect(mapStateToProps, {fnToggleSidebar, fnToggleMobileSidebar})(Sidebar)
+export const Sidebar: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(SidebarComponent)

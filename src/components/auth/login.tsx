@@ -11,7 +11,7 @@ import TextField from 'material-ui/TextField'
 import Paper from 'material-ui/Paper'
 import * as validator from 'validator'
 
-const LOGO = require('../../images/header_logo.jpg')
+const LOGO = require('../../img/header_logo.jpg')
 
 import {actionLoginUser} from '../../actions/index'
 

@@ -19,14 +19,7 @@ class FooterComponent extends React.Component<ConnectedState & ConnectedDispatch
     }
   }
 
-  public render() {
-    return (
-      <footer className="site-footer clear-fix">
-        <div className="pull-left">Copyright © 2017</div>
-        <div className="pull-right">v{this.state.version}</div>
-      </footer>
-    )
-  }
+  public render() { return null }
 }
 
 export const Footer: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(FooterComponent)

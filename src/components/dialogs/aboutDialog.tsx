@@ -23,7 +23,6 @@ const mapDispatchToProps = (dispatch: Redux.Dispatch<any>): ConnectedDispatch =>
 
 class AboutDialogComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
 
-  open () { this.props.actionToggleDialogAboutLocal(true) }
   close () { this.props.actionToggleDialogAboutLocal(false) }
 
   public render () {
@@ -33,7 +32,7 @@ class AboutDialogComponent extends React.Component<ConnectedState & ConnectedDis
         label={I18n.t('Buttons.OK')}
         primary
         keyboardFocused
-        onTouchTap={this.close.bind(this)}
+        onClick={this.close.bind(this)}
       />
     ]
 

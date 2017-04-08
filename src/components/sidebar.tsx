@@ -103,7 +103,7 @@ class SidebarComponent extends React.Component<ConnectedState & ConnectedDispatc
 
     let mailContent = userRoleId === ROLES.HOW ? content.mail : ''
     let usersContent = userRoleId === ROLES.HOW ? content.users : ''
-    let contactsContent = userRoleId !== ROLES.HOW ? content.contacts : ''
+    let contactsContent = userRoleId === ROLES.HOW ? content.contacts : ''
     const ScrollAreaLocal = ScrollArea['default']
     return (
       <div className="sidebar-main">

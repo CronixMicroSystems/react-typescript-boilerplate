@@ -14,7 +14,7 @@ import * as validator from 'validator'
 import { history } from '../../store/index'
 import { actionNewPassword, actionChangeToken } from '../../actions/index'
 
-const LOGO = require('../../images/header_logo.jpg')
+const LOGO = require('../../img/header_logo.jpg')
 
 const STYLES = {
   floatingLabelFocusStyle: {

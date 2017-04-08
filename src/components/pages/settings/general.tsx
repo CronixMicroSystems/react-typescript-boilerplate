@@ -20,14 +20,18 @@ const mapDispatchToProps = (dispatch: Redux.Dispatch<any>): ConnectedDispatch =>
 class GeneralComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
 
   componentWillMount () {
-    this.props.actionChangeHeaderTitleLocal(I18n.t('ProfilePage.namePage'))
+    this.props.actionChangeHeaderTitleLocal(I18n.t('SettingsPage.GeneralPage.namePage'))
     this.props.actionChangeNavigationBarLocal([
       {
         name: 'Home',
         url: '/'
       },
       {
-        name: 'Profile',
+        name: 'Settings',
+        url: ''
+      },
+      {
+        name: 'General',
         url: ''
       }
     ])

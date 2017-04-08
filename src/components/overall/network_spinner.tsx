@@ -30,7 +30,7 @@ class NetworkSpinner extends React.Component<ConnectedState & ConnectedDispatch 
           border: '0px solid black',
           borderRadius: '40px',
           backgroundColor: 'rgba(185, 185, 185, 0.75)',
-          backgroundImage: `url('../../images/header_logo.jpg')`,
+          backgroundImage: `url('../../img/header_logo.jpg')`,
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           backgroundSize: '70%'

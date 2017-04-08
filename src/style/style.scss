@@ -1,15 +1,9 @@
 @import './helpers';
-
 @import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-
 @import '../../node_modules/font-awesome/css/font-awesome.min.css';
-
 @import '../../node_modules/react-redux-toastr/lib/css/react-redux-toastr.min.css';
-
 @import '../../node_modules/rc-collapse/assets/index.css';
-
 @import '../../node_modules/react-grid-layout/css/styles.css';
-
 @import '../../node_modules/react-select/dist/react-select.css';
 
 //colors
@@ -17,11 +11,11 @@ $silver: #c0c0c0;
 $color_suva_gray_approx: #888;
 $white: #fff;
 $color_gravel_approx: #4a4a4a;
-$black_5: rgba(0,0,0,0.05);
+$black_5: rgba(0, 0, 0, 0.05);
 $color_mercury_approx: #dee5e7;
 $color_romance_approx: #fcfdfd;
-$black_12_5: rgba(0,0,0,0.125);
-$black_20: rgba(0,0,0,0.2);
+$black_12_5: rgba(0, 0, 0, 0.125);
+$black_20: rgba(0, 0, 0, 0.2);
 $color_athens_gray_approx: #edf1f2;
 $color_bright_gray_approx: #3a3f51;
 $color_blue_marguerite_approx: #7266ba;
@@ -32,10 +26,10 @@ $color_sunset_orange_approx: #f05050;
 $color_outer_space_approx: #37474F;
 $color_pattens_blue_approx: #e3f2fd;
 $color_ship_gray_approx: #373c47;
-$black_14: rgba(0,0,0,0.14);
-$black_12: rgba(0,0,0,0.12);
-$black_10: rgba(0,0,0,0.1);
-$black_9: rgba(0,0,0,0.09);
+$black_14: rgba(0, 0, 0, 0.14);
+$black_12: rgba(0, 0, 0, 0.12);
+$black_10: rgba(0, 0, 0, 0.1);
+$black_9: rgba(0, 0, 0, 0.09);
 $color_silver_chalice_approx: #aaa;
 $color_dodger_blue_approx: #00BFA5;
 $color_sunglo_approx: #e57373;
@@ -44,16 +38,16 @@ $color_gallery_approx: #ededed;
 $color_alto_approx: #ddd;
 $color_shark_approx: #262626;
 $color_navy_blue_approx: #00008b;
-$color_dodger_blue_60_approx: rgba(33,150,243,0.6);
+$color_dodger_blue_60_approx: rgba(33, 150, 243, 0.6);
 $color_dove_gray_approx: #716f6f;
 $color_swiss_coffee_approx: #d9d6d6;
 $color_tapa_approx: #757575;
 $color_apple_approx: #4caf50;
 $color_california_approx: #ff9800;
-$black_54: rgba(0,0,0,0.54);
-$white_50: rgba(255,255,255,0.5);
-$black_87_1: rgba(0,0,0,0.871);
-$black_15: rgba(0,0,0,0.15);
+$black_54: rgba(0, 0, 0, 0.54);
+$white_50: rgba(255, 255, 255, 0.5);
+$black_87_1: rgba(0, 0, 0, 0.871);
+$black_15: rgba(0, 0, 0, 0.15);
 $color_storm_dust_approx: #616161;
 $red: #f00;
 $color_steel_blue_approx: #607D8B;
@@ -65,1522 +59,1864 @@ $font_2: Arial;
 $font_3: sans-serif;
 
 //urls
-$url_0: url(../images/user.png);
+$url_0: url(../img/user.png);
 $url_1: url(https://lh3.googleusercontent.com/NSZTx37PfEOlV-GyQj2fr99p4JMMrg5fwmrp8lIjUyM_SgcZ0PcHX7X7GdI-2Fqj3O0k=w300);
 
 .box-shadow {
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: 0 2px 2px $black_5, 0 1px 0 $black_5;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 2px 2px $black_5, 0 1px 0 $black_5;
 }
+
 .box-shadow-lg {
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: 5px 5px 10px $black_5;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 5px 5px 10px $black_5;
 }
+
 .text-shadow {
-	font-size: 170px;
-	//Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	text-shadow: 0 1px 0 $color_mercury_approx, 0 2px 0 $color_romance_approx, 0 5px 10px $black_12_5, 0 10px 20px $black_20;
+  font-size: 170px;
+  //Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  text-shadow: 0 1px 0 $color_mercury_approx, 0 2px 0 $color_romance_approx, 0 5px 10px $black_12_5, 0 10px 20px $black_20;
 }
+
 .no-shadow {
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: none !important;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: none !important;
 }
+
 .wrapper-xs {
-	padding: 5px;
+  padding: 5px;
 }
+
 .wrapper-sm {
-	padding: 10px;
+  padding: 10px;
 }
+
 .wrapper {
-	padding: 15px;
+  padding: 15px;
 }
+
 .wrapper-md {
-	padding: 20px;
+  padding: 20px;
 }
+
 .wrapper-lg {
-	padding: 30px;
+  padding: 30px;
 }
+
 .wrapper-xl {
-	padding: 50px;
+  padding: 50px;
 }
+
 .padder-lg {
-	padding-right: 30px;
-	padding-left: 30px;
+  padding-right: 30px;
+  padding-left: 30px;
 }
+
 .padder-md {
-	padding-right: 20px;
-	padding-left: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
+
 .padder {
-	padding-right: 15px;
-	padding-left: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
+
 .padder-v {
-	padding-top: 15px;
-	padding-bottom: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
+
 .no-padder {
-	padding: 0 !important;
+  padding: 0 !important;
 }
+
 .pull-in {
-	margin-right: -15px;
-	margin-left: -15px;
+  margin-right: -15px;
+  margin-left: -15px;
 }
+
 .pull-out {
-	margin: -10px -15px;
+  margin: -10px -15px;
 }
+
 .b {
-	border: 1px solid $black_5;
+  border: 1px solid $black_5;
 }
+
 .b-a {
-	border: 1px solid $color_mercury_approx;
+  border: 1px solid $color_mercury_approx;
 }
+
 .b-t {
-	border-top: 1px solid $color_mercury_approx;
+  border-top: 1px solid $color_mercury_approx;
 }
+
 .b-r {
-	border-right: 1px solid $color_mercury_approx;
+  border-right: 1px solid $color_mercury_approx;
 }
+
 .b-b {
-	border-bottom: 1px solid $color_mercury_approx;
+  border-bottom: 1px solid $color_mercury_approx;
 }
+
 .b-l {
-	border-left: 1px solid $color_mercury_approx;
+  border-left: 1px solid $color_mercury_approx;
 }
+
 .b-light {
-	border-color: $color_athens_gray_approx;
+  border-color: $color_athens_gray_approx;
 }
+
 .b-dark {
-	border-color: $color_bright_gray_approx;
+  border-color: $color_bright_gray_approx;
 }
+
 .b-black {
-	border-color: $color_bright_gray_approx;
+  border-color: $color_bright_gray_approx;
 }
+
 .b-primary {
-	border-color: $color_blue_marguerite_approx;
+  border-color: $color_blue_marguerite_approx;
 }
+
 .b-success {
-	border-color: $color_malachite_approx;
+  border-color: $color_malachite_approx;
 }
+
 .b-info {
-	border-color: $color_scooter_approx;
+  border-color: $color_scooter_approx;
 }
+
 .b-warning {
-	border-color: $color_bright_sun_approx;
+  border-color: $color_bright_sun_approx;
 }
+
 .b-danger {
-	border-color: $color_sunset_orange_approx;
+  border-color: $color_sunset_orange_approx;
 }
+
 .b-white {
-	border-color: $white;
+  border-color: $white;
 }
+
 .b-dashed {
-	border-style: dashed !important;
+  border-style: dashed !important;
 }
+
 .b-l-light {
-	border-left-color: $color_athens_gray_approx;
+  border-left-color: $color_athens_gray_approx;
 }
+
 .b-l-dark {
-	border-left-color: $color_bright_gray_approx;
+  border-left-color: $color_bright_gray_approx;
 }
+
 .b-l-black {
-	border-left-color: $color_bright_gray_approx;
+  border-left-color: $color_bright_gray_approx;
 }
+
 .b-l-primary {
-	border-left-color: $color_blue_marguerite_approx;
+  border-left-color: $color_blue_marguerite_approx;
 }
+
 .b-l-success {
-	border-left-color: $color_malachite_approx;
+  border-left-color: $color_malachite_approx;
 }
+
 .b-l-info {
-	border-left-color: $color_scooter_approx;
+  border-left-color: $color_scooter_approx;
 }
+
 .b-l-warning {
-	border-left-color: $color_bright_sun_approx;
+  border-left-color: $color_bright_sun_approx;
 }
+
 .b-l-danger {
-	border-left-color: $color_sunset_orange_approx;
+  border-left-color: $color_sunset_orange_approx;
 }
+
 .b-l-white {
-	border-left-color: $white;
+  border-left-color: $white;
 }
+
 .b-l-2x {
-	border-left-width: 2px;
+  border-left-width: 2px;
 }
+
 .b-l-3x {
-	border-left-width: 3px;
+  border-left-width: 3px;
 }
+
 .b-l-4x {
-	border-left-width: 4px;
+  border-left-width: 4px;
 }
+
 .b-l-5x {
-	border-left-width: 5px;
+  border-left-width: 5px;
 }
+
 .b-2x {
-	border-width: 2px;
+  border-width: 2px;
 }
+
 .b-3x {
-	border-width: 3px;
+  border-width: 3px;
 }
+
 .b-4x {
-	border-width: 4px;
+  border-width: 4px;
 }
+
 .b-5x {
-	border-width: 5px;
+  border-width: 5px;
 }
+
 .r {
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-	border-radius: 2px 2px 2px 2px;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px 2px 2px 2px;
 }
+
 .r-2x {
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-	border-radius: 4px;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 4px;
 }
+
 .r-3x {
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-	border-radius: 6px;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 6px;
 }
+
 .r-l {
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-	border-radius: 2px 0 0 2px;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px 0 0 2px;
 }
+
 .r-r {
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-	border-radius: 0 2px 2px 0;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 0 2px 2px 0;
 }
+
 .r-t {
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-	border-radius: 2px 2px 0 0;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px 2px 0 0;
 }
+
 .r-b {
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-	border-radius: 0 0 2px 2px;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 0 0 2px 2px;
 }
+
 .m-xxs {
-	margin: 2px 4px;
+  margin: 2px 4px;
 }
+
 .m-xs {
-	margin: 5px;
+  margin: 5px;
 }
+
 .m-sm {
-	margin: 10px;
+  margin: 10px;
 }
+
 .m {
-	margin: 15px;
+  margin: 15px;
 }
+
 .m-md {
-	margin: 20px;
+  margin: 20px;
 }
+
 .m-lg {
-	margin: 30px;
+  margin: 30px;
 }
+
 .m-xl {
-	margin: 50px;
+  margin: 50px;
 }
+
 .m-n {
-	margin: 0 !important;
+  margin: 0 !important;
 }
+
 .m-l-none {
-	margin-left: 0 !important;
+  margin-left: 0 !important;
 }
+
 .m-l-xs {
-	margin-left: 5px;
+  margin-left: 5px;
 }
+
 .m-l-sm {
-	margin-left: 10px;
+  margin-left: 10px;
 }
+
 .m-l {
-	margin-left: 15px;
+  margin-left: 15px;
 }
+
 .m-l-md {
-	margin-left: 20px;
+  margin-left: 20px;
 }
+
 .m-l-lg {
-	margin-left: 30px;
+  margin-left: 30px;
 }
+
 .m-l-xl {
-	margin-left: 40px;
+  margin-left: 40px;
 }
+
 .m-l-xxl {
-	margin-left: 50px;
+  margin-left: 50px;
 }
+
 .m-l-n-xxs {
-	margin-left: -1px;
+  margin-left: -1px;
 }
+
 .m-l-n-xs {
-	margin-left: -5px;
+  margin-left: -5px;
 }
+
 .m-l-n-sm {
-	margin-left: -10px;
+  margin-left: -10px;
 }
+
 .m-l-n {
-	margin-left: -15px;
+  margin-left: -15px;
 }
+
 .m-l-n-md {
-	margin-left: -20px;
+  margin-left: -20px;
 }
+
 .m-l-n-lg {
-	margin-left: -30px;
+  margin-left: -30px;
 }
+
 .m-l-n-xl {
-	margin-left: -40px;
+  margin-left: -40px;
 }
+
 .m-l-n-xxl {
-	margin-left: -50px;
+  margin-left: -50px;
 }
+
 .m-t-none {
-	margin-top: 0 !important;
+  margin-top: 0 !important;
 }
+
 .m-t-xxs {
-	margin-top: 1px;
+  margin-top: 1px;
 }
+
 .m-t-xs-sm {
-	margin-top: 2px;
+  margin-top: 2px;
 }
+
 .m-t-xs {
-	margin-top: 5px;
+  margin-top: 5px;
 }
+
 .m-t-sm {
-	margin-top: 10px;
+  margin-top: 10px;
 }
+
 .m-t {
-	margin-top: 15px;
+  margin-top: 15px;
 }
+
 .m-t-md {
-	margin-top: 20px;
+  margin-top: 20px;
 }
+
 .m-t-lg {
-	margin-top: 30px;
+  margin-top: 30px;
 }
+
 .m-t-xl {
-	margin-top: 40px;
+  margin-top: 40px;
 }
+
 .m-t-xxl {
-	margin-top: 50px;
+  margin-top: 50px;
 }
+
 .m-t-n-xxs {
-	margin-top: -1px;
+  margin-top: -1px;
 }
+
 .m-t-n-xs {
-	margin-top: -5px;
+  margin-top: -5px;
 }
+
 .m-t-n-sm {
-	margin-top: -10px;
+  margin-top: -10px;
 }
+
 .m-t-n {
-	margin-top: -15px;
+  margin-top: -15px;
 }
+
 .m-t-n-md {
-	margin-top: -20px;
+  margin-top: -20px;
 }
+
 .m-t-n-lg {
-	margin-top: -30px;
+  margin-top: -30px;
 }
+
 .m-t-n-xl {
-	margin-top: -40px;
+  margin-top: -40px;
 }
+
 .m-t-n-xxl {
-	margin-top: -50px;
+  margin-top: -50px;
 }
+
 .m-r-none {
-	margin-right: 0 !important;
+  margin-right: 0 !important;
 }
+
 .m-r-xxs {
-	margin-right: 1px;
+  margin-right: 1px;
 }
+
 .m-r-xs {
-	margin-right: 5px;
+  margin-right: 5px;
 }
+
 .m-r-sm {
-	margin-right: 10px;
+  margin-right: 10px;
 }
+
 .m-r {
-	margin-right: 15px;
+  margin-right: 15px;
 }
+
 .m-r-md {
-	margin-right: 20px;
+  margin-right: 20px;
 }
+
 .m-r-lg {
-	margin-right: 30px;
+  margin-right: 30px;
 }
+
 .m-r-xl {
-	margin-right: 40px;
+  margin-right: 40px;
 }
+
 .m-r-xxl {
-	margin-right: 50px;
+  margin-right: 50px;
 }
+
 .m-r-n-xxs {
-	margin-right: -1px;
+  margin-right: -1px;
 }
+
 .m-r-n-xs {
-	margin-right: -5px;
+  margin-right: -5px;
 }
+
 .m-r-n-sm {
-	margin-right: -10px;
+  margin-right: -10px;
 }
+
 .m-r-n {
-	margin-right: -15px;
+  margin-right: -15px;
 }
+
 .m-r-n-md {
-	margin-right: -20px;
+  margin-right: -20px;
 }
+
 .m-r-n-lg {
-	margin-right: -30px;
+  margin-right: -30px;
 }
+
 .m-r-n-xl {
-	margin-right: -40px;
+  margin-right: -40px;
 }
+
 .m-r-n-xxl {
-	margin-right: -50px;
+  margin-right: -50px;
 }
+
 .m-b-none {
-	margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
+
 .m-b-xxs {
-	margin-bottom: 1px;
+  margin-bottom: 1px;
 }
+
 .m-b-xs {
-	margin-bottom: 5px;
+  margin-bottom: 5px;
 }
+
 .m-b-sm {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
+
 .m-b {
-	margin-bottom: 15px;
+  margin-bottom: 15px;
 }
+
 .m-b-md {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
+
 .m-b-lg {
-	margin-bottom: 30px;
+  margin-bottom: 30px;
 }
+
 .m-b-xl {
-	margin-bottom: 40px;
+  margin-bottom: 40px;
 }
+
 .m-b-xxl {
-	margin-bottom: 50px;
+  margin-bottom: 50px;
 }
+
 .m-b-n-xxs {
-	margin-bottom: -1px;
+  margin-bottom: -1px;
 }
+
 .m-b-n-xs {
-	margin-bottom: -5px;
+  margin-bottom: -5px;
 }
+
 .m-b-n-sm {
-	margin-bottom: -10px;
+  margin-bottom: -10px;
 }
+
 .m-b-n {
-	margin-bottom: -15px;
+  margin-bottom: -15px;
 }
+
 .m-b-n-md {
-	margin-bottom: -20px;
+  margin-bottom: -20px;
 }
+
 .m-b-n-lg {
-	margin-bottom: -30px;
+  margin-bottom: -30px;
 }
+
 .m-b-n-xl {
-	margin-bottom: -40px;
+  margin-bottom: -40px;
 }
+
 .m-b-n-xxl {
-	margin-bottom: -50px;
+  margin-bottom: -50px;
 }
+
 .l-h-none {
-	line-height: 0 !important;
+  line-height: 0 !important;
 }
+
 .l-h-xs {
-	line-height: 5px;
+  line-height: 5px;
 }
+
 .l-h-sm {
-	line-height: 10px;
+  line-height: 10px;
 }
+
 .l-h {
-	line-height: 15px;
+  line-height: 15px;
 }
+
 .l-h-md {
-	line-height: 20px;
+  line-height: 20px;
 }
+
 .l-h-lg {
-	line-height: 30px;
+  line-height: 30px;
 }
+
 .l-h-xl {
-	line-height: 40px;
+  line-height: 40px;
 }
+
 .l-h-xxl {
-	line-height: 50px;
+  line-height: 50px;
 }
+
 .p-none {
-	padding: 0 !important;
+  padding: 0 !important;
 }
+
 .p-xxs {
-	padding: 2px 4px;
+  padding: 2px 4px;
 }
+
 .p-xs {
-	padding: 5px;
+  padding: 5px;
 }
+
 .p-sm {
-	padding: 10px !important;
+  padding: 10px !important;
 }
+
 .p {
-	padding: 15px;
+  padding: 15px;
 }
+
 .p-md {
-	padding: 20px;
+  padding: 20px;
 }
+
 .p-lg {
-	padding: 30px;
+  padding: 30px;
 }
+
 .p-xl {
-	padding: 50px;
+  padding: 50px;
 }
+
 .p-n {
-	padding: 0 !important;
+  padding: 0 !important;
 }
+
 .p-l-none {
-	padding-left: 0 !important;
+  padding-left: 0 !important;
 }
+
 .p-l-xs {
-	padding-left: 5px;
+  padding-left: 5px;
 }
+
 .p-l-sm {
-	padding-left: 10px;
+  padding-left: 10px;
 }
+
 .p-l {
-	padding-left: 15px;
+  padding-left: 15px;
 }
+
 .p-l-md {
-	padding-left: 20px;
+  padding-left: 20px;
 }
+
 .p-l-lg {
-	padding-left: 30px;
+  padding-left: 30px;
 }
+
 .p-l-xl {
-	padding-left: 40px;
+  padding-left: 40px;
 }
+
 .p-l-xxl {
-	padding-left: 50px;
+  padding-left: 50px;
 }
+
 .p-l-n-xxs {
-	padding-left: -1px;
+  padding-left: -1px;
 }
+
 .p-l-n-xs {
-	padding-left: -5px;
+  padding-left: -5px;
 }
+
 .p-l-n-sm {
-	padding-left: -10px;
+  padding-left: -10px;
 }
+
 .p-l-n {
-	padding-left: -15px;
+  padding-left: -15px;
 }
+
 .p-l-n-md {
-	padding-left: -20px;
+  padding-left: -20px;
 }
+
 .p-l-n-lg {
-	padding-left: -30px;
+  padding-left: -30px;
 }
+
 .p-l-n-xl {
-	padding-left: -40px;
+  padding-left: -40px;
 }
+
 .p-l-n-xxl {
-	padding-left: -50px;
+  padding-left: -50px;
 }
+
 .p-t-none {
-	padding-top: 0 !important;
+  padding-top: 0 !important;
 }
+
 .p-t-xxs {
-	padding-top: 1px;
+  padding-top: 1px;
 }
+
 .p-t-xs {
-	padding-top: 5px !important;
+  padding-top: 5px !important;
 }
+
 .p-t-sm {
-	padding-top: 10px;
+  padding-top: 10px;
 }
+
 .p-t {
-	padding-top: 15px;
+  padding-top: 15px;
 }
+
 .p-t-md {
-	padding-top: 20px;
+  padding-top: 20px;
 }
+
 .p-t-lg {
-	padding-top: 30px;
+  padding-top: 30px;
 }
+
 .p-t-xl {
-	padding-top: 40px;
+  padding-top: 40px;
 }
+
 .p-t-xxl {
-	padding-top: 50px;
+  padding-top: 50px;
 }
+
 .p-t-n-xxs {
-	padding-top: -1px;
+  padding-top: -1px;
 }
+
 .p-t-n-xs {
-	padding-top: -5px;
+  padding-top: -5px;
 }
+
 .p-t-n-sm {
-	padding-top: -10px;
+  padding-top: -10px;
 }
+
 .p-t-n {
-	padding-top: -15px;
+  padding-top: -15px;
 }
+
 .p-t-n-md {
-	padding-top: -20px;
+  padding-top: -20px;
 }
+
 .p-t-n-lg {
-	padding-top: -30px;
+  padding-top: -30px;
 }
+
 .p-t-n-xl {
-	padding-top: -40px;
+  padding-top: -40px;
 }
+
 .p-t-n-xxl {
-	padding-top: -50px;
+  padding-top: -50px;
 }
+
 .p-r-none {
-	padding-right: 0 !important;
+  padding-right: 0 !important;
 }
+
 .p-r-xxs {
-	padding-right: 1px;
+  padding-right: 1px;
 }
+
 .p-r-xs {
-	padding-right: 5px;
+  padding-right: 5px;
 }
+
 .p-r-sm {
-	padding-right: 10px;
+  padding-right: 10px;
 }
+
 .p-r {
-	padding-right: 15px;
+  padding-right: 15px;
 }
+
 .p-r-md {
-	padding-right: 20px;
+  padding-right: 20px;
 }
+
 .p-r-lg {
-	padding-right: 30px;
+  padding-right: 30px;
 }
+
 .p-r-xl {
-	padding-right: 40px;
+  padding-right: 40px;
 }
+
 .p-r-xxl {
-	padding-right: 50px;
+  padding-right: 50px;
 }
+
 .p-r-n-xxs {
-	padding-right: -1px;
+  padding-right: -1px;
 }
+
 .p-r-n-xs {
-	padding-right: -5px;
+  padding-right: -5px;
 }
+
 .p-r-n-sm {
-	padding-right: -10px;
+  padding-right: -10px;
 }
+
 .p-r-n {
-	padding-right: -15px;
+  padding-right: -15px;
 }
+
 .p-r-n-md {
-	padding-right: -20px;
+  padding-right: -20px;
 }
+
 .p-r-n-lg {
-	padding-right: -30px;
+  padding-right: -30px;
 }
+
 .p-r-n-xl {
-	padding-right: -40px;
+  padding-right: -40px;
 }
+
 .p-r-n-xxl {
-	padding-right: -50px;
+  padding-right: -50px;
 }
+
 .p-b-none {
-	padding-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
+
 .p-b-xxs {
-	padding-bottom: 1px;
+  padding-bottom: 1px;
 }
+
 .p-b-xs {
-	padding-bottom: 5px !important;
+  padding-bottom: 5px !important;
 }
+
 .p-b-sm {
-	padding-bottom: 10px;
+  padding-bottom: 10px;
 }
+
 .p-b {
-	padding-bottom: 15px;
+  padding-bottom: 15px;
 }
+
 .p-b-md {
-	padding-bottom: 20px;
+  padding-bottom: 20px;
 }
+
 .p-b-lg {
-	padding-bottom: 30px;
+  padding-bottom: 30px;
 }
+
 .p-b-xl {
-	padding-bottom: 40px;
+  padding-bottom: 40px;
 }
+
 .p-b-xxl {
-	padding-bottom: 50px;
+  padding-bottom: 50px;
 }
+
 .p-b-n-xxs {
-	padding-bottom: -1px;
+  padding-bottom: -1px;
 }
+
 .p-b-n-xs {
-	padding-bottom: -5px;
+  padding-bottom: -5px;
 }
+
 .p-b-n-sm {
-	padding-bottom: -10px;
+  padding-bottom: -10px;
 }
+
 .p-b-n {
-	padding-bottom: -15px;
+  padding-bottom: -15px;
 }
+
 .p-b-n-md {
-	padding-bottom: -20px;
+  padding-bottom: -20px;
 }
+
 .p-b-n-lg {
-	padding-bottom: -30px;
+  padding-bottom: -30px;
 }
+
 .p-b-n-xl {
-	padding-bottom: -40px;
+  padding-bottom: -40px;
 }
+
 .p-b-n-xxl {
-	padding-bottom: -50px;
+  padding-bottom: -50px;
 }
 
 html {
-	height: 100%;
-	font-family: $font_0, $font_1, $font_2, $font_3;
+  height: 100%;
+  font-family: $font_0, $font_1, $font_2, $font_3;
 }
+
 body {
-	height: 100%;
-	font-family: $font_0, $font_1, $font_2, $font_3;
-	font-family: $font_3;
-	margin-right: 0;
-	margin-left: 0;
-	background-color: $color_gallery_approx;
+  height: 100%;
+  font-family: $font_0, $font_1, $font_2, $font_3;
+  font-family: $font_3;
+  margin-right: 0;
+  margin-left: 0;
+  background-color: $color_gallery_approx;
 }
+
 #root {
-	height: 100%;
-	font-family: $font_0, $font_1, $font_2, $font_3;
+  height: 100%;
+  font-family: $font_0, $font_1, $font_2, $font_3;
 }
+
 .app {
-	height: 100%;
-	font-family: $font_0, $font_1, $font_2, $font_3;
-	overflow: hidden;
+  height: 100%;
+  font-family: $font_0, $font_1, $font_2, $font_3;
+  overflow: hidden;
 }
+
 a {
-	text-decoration: none !important;
+  text-decoration: none !important;
 }
+
 .spinlogo {
-	animation: rotation 1s infinite ease-in-out, bounce 1s infinite ease-in-out;
+  animation: rotation 1s infinite ease-in-out, bounce 1s infinite ease-in-out;
 }
+
 .sidebar-main {
-	width: 240px;
-	height: 100%;
-	background: $color_outer_space_approx;
-	color: $color_pattens_blue_approx;
-	overflow: hidden;
+  width: 240px;
+  height: 100%;
+  background: $color_outer_space_approx;
+  color: $color_pattens_blue_approx;
+  overflow: hidden;
 }
+
 .sidebar-main__brand {
-	margin-top: 0;
-	padding-left: 15px;
-	padding-right: 5px;
-	cursor: pointer;
-	height: 64px;
-	background: $color_ship_gray_approx;
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: 0 1px 3px 0 $black_20, 0 1px 1px 0 $black_14, 0 2px 1px -1px $black_12;
+  margin-top: 0;
+  padding-left: 15px;
+  padding-right: 5px;
+  cursor: pointer;
+  height: 64px;
+  background: $color_ship_gray_approx;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 1px 3px 0 $black_20, 0 1px 1px 0 $black_14, 0 2px 1px -1px $black_12;
 }
+
 .sidebar-main__brand-h1 {
-	margin: 0;
-	height: 100%;
-	display: flex;
-	font-size: 27px;
-	opacity: 0.7;
-	align-items: center;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  font-size: 27px;
+  opacity: 0.7;
+  align-items: center;
 }
+
 .sidebar-main__text-color {
-	color: $color_pattens_blue_approx !important;
-	button svg {
-		color: $color_pattens_blue_approx !important;
-	}
+  div {
+    color: $color_pattens_blue_approx !important;
+  }
+  button svg {
+    color: $color_pattens_blue_approx !important;
+  }
 }
+
 .sidebar-main__toggle-slider-btn {
-	float: right !important;
-	padding: 0 12px !important;
+  float: right !important;
+  padding: 0 12px !important;
 }
+
 .brand {
-	font-size: 0.9em;
-	line-height: 1;
-	padding: 0;
-	margin: 0;
-	color: $color_pattens_blue_approx;
-	&:focus {
-		color: $color_pattens_blue_approx;
-		text-decoration: none;
-	}
-	&:hover {
-		color: $color_pattens_blue_approx;
-		text-decoration: none;
-	}
-	&:active {
-		color: $color_pattens_blue_approx;
-		text-decoration: none;
-	}
-	&:visited {
-		color: $color_pattens_blue_approx;
-		text-decoration: none;
-	}
+  font-size: 0.9em;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  color: $color_pattens_blue_approx;
+  &:focus {
+    color: $color_pattens_blue_approx;
+    text-decoration: none;
+  }
+  &:hover {
+    color: $color_pattens_blue_approx;
+    text-decoration: none;
+  }
+  &:active {
+    color: $color_pattens_blue_approx;
+    text-decoration: none;
+  }
+  &:visited {
+    color: $color_pattens_blue_approx;
+    text-decoration: none;
+  }
 }
+
 .sidebar-main__link {
-	color: $color_pattens_blue_approx !important;
+  color: $color_pattens_blue_approx !important;
 }
+
 .sidebar-main__link-wrap {
-	padding-left: 15px !important;
+  padding-left: 15px !important;
 }
+
 .sidebar-main__wrap-mobile-brand {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
 .sidebar-main__scroll-bar {
-	height: calc(100% - 154px);
-	width: 100%;
+  height: calc(100% - 154px);
+  width: 100%;
 }
+
 .user-info {
-	height: 90px;
-	padding: 15px;
-	position: relative;
-	background-color: $black_9;
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: 0 1px 3px 0 $black_20, 0 1px 1px 0 $black_14, 0 2px 1px -1px $black_12;
+  height: 90px;
+  padding: 15px;
+  position: relative;
+  background-color: $black_9;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 1px 3px 0 $black_20, 0 1px 1px 0 $black_14, 0 2px 1px -1px $black_12;
 }
+
 .user-info__avatar {
-	background-image: $url_0;
-	border: 1px solid $white;
-	height: 45px;
-	width: 45px;
-	display: inline-block;
-	background-size: cover;
+  background-image: $url_0;
+  border: 1px solid $white;
+  height: 45px;
+  width: 45px;
+  display: inline-block;
+  background-size: cover;
 }
+
 .user-info__info {
-	display: inline-block;
-	font-size: 1.1em;
-	width: calc(100% - 45px);
-	float: right;
-	padding: 0 15px;
+  display: inline-block;
+  font-size: 1.1em;
+  width: calc(100% - 45px);
+  float: right;
+  padding: 0 15px;
 }
+
 .menu-main {
-	color: $color_pattens_blue_approx !important;
+  color: $color_pattens_blue_approx !important;
 }
+
 .footer-main {
-	height: 50px;
-	border: 2px solid $color_silver_chalice_approx;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	left: 0;
+  height: 50px;
+  border: 2px solid $color_silver_chalice_approx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
+
 .history-active-profile {
-	padding-right: 30px;
-	padding-top: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
 }
+
 .right-bar {
-	float: left;
-	width: 25%;
-	padding-top: 30px;
+  float: left;
+  width: 25%;
+  padding-top: 30px;
 }
+
 .header-main {
-	background: $color_dodger_blue_approx !important;
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: 0 1px 3px 0 $black_20, 0 1px 1px 0 $black_14, 0 2px 1px -1px $black_12 !important;
+  background: $color_dodger_blue_approx !important;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 1px 3px 0 $black_20, 0 1px 1px 0 $black_14, 0 2px 1px -1px $black_12 !important;
 }
+
 .auth__paper {
-	height: 100%;
-	width: 100%;
-	padding: 50px 0;
-	text-align: center;
-	display: inline-block;
+  height: 100%;
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  display: inline-block;
 }
+
 .auth__row {
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
+
 .auth__btn {
-	margin: 30px 0;
+  margin: 30px 0;
 }
+
 .auth__box-nav {
-	width: 256px;
-	margin: auto;
-	a {
-		color: $color_dodger_blue_approx;
-	}
+  width: 256px;
+  margin: auto;
+  a {
+    color: $color_dodger_blue_approx;
+  }
 }
+
 .auth__brand {
-	margin: 0 auto;
-	cursor: pointer;
-	height: 150px;
+  margin: 0 auto;
+  cursor: pointer;
+  height: 150px;
 }
+
 .auth__error-messages {
-	background: $color_sunglo_approx;
-	padding: 10px;
-	text-align: center;
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-	border-radius: 5px;
-	border: 1px solid $color_red_orange_approx;
-	color: $color_pattens_blue_approx;
-	font-size: 1.2em;
-	width: 256px;
-	margin: 10px auto;
+  background: $color_sunglo_approx;
+  padding: 10px;
+  text-align: center;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 5px;
+  border: 1px solid $color_red_orange_approx;
+  color: $color_pattens_blue_approx;
+  font-size: 1.2em;
+  width: 256px;
+  margin: 10px auto;
 }
+
 .not-found__paper {
-	height: 100%;
-	width: 100%;
-	padding: 50px 0;
-	text-align: center;
-	display: inline-block;
+  height: 100%;
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  display: inline-block;
 }
+
 .not-found__row {
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
+
 .not-found__btn {
-	margin: 30px 0;
+  margin: 30px 0;
 }
+
 .not-found__box-nav {
-	width: 256px;
-	margin: auto;
+  width: 256px;
+  margin: auto;
 }
+
 .not-found__brand {
-	margin: 0 auto;
-	cursor: pointer;
+  margin: 0 auto;
+  cursor: pointer;
 }
+
 .profile-top-info {
-	width: auto;
-	height: 250px;
+  width: auto;
+  height: 250px;
 }
+
 @media screen and(max-width: 340px) {
-	.profile-top-info {
-		height: 200px;
-	}
-	.profile-top-background {
-		height: 40%;
-	}
-	.profile-top-user-info {
-		margin-top: 0;
-		padding-left: 15px;
-		.data {
-			padding-right: 5px;
-		}
-		.right {
-			padding-left: 10px;
-		}
-		.title {
-			font-size: 0.9em;
-			height: 50%;
-			padding-right: 15px;
-		}
-		.text {
-			font-size: 0.8em;
-			color: $color_suva_gray_approx;
-		}
-	}
-	.profile-top-avatar {
-		left: 19%;
-		width: 65px;
-		height: 65px;
-		margin-top: 5px;
-	}
-	.history-active {
-		margin-top: -30px;
-		.calendar-pic {
-			width: 30px;
-			height: 30px;
-		}
-		.day {
-			font-size: 0.9em;
-		}
-		li {
-			font-size: 0.9em;
-			min-height: 30px;
-			.time {
-				font-size: 0.9em;
-				min-height: 30px;
-				padding-right: 5px;
-				padding-left: 5px;
-			}
-		}
-	}
+  .profile-top-info {
+    height: 200px;
+  }
+  .profile-top-background {
+    height: 40%;
+  }
+  .profile-top-user-info {
+    margin-top: 0;
+    padding-left: 15px;
+    .data {
+      padding-right: 5px;
+    }
+    .right {
+      padding-left: 10px;
+    }
+    .title {
+      font-size: 0.9em;
+      height: 50%;
+      padding-right: 15px;
+    }
+    .text {
+      font-size: 0.8em;
+      color: $color_suva_gray_approx;
+    }
+  }
+  .profile-top-avatar {
+    left: 19%;
+    width: 65px;
+    height: 65px;
+    margin-top: 5px;
+  }
+  .history-active {
+    margin-top: -30px;
+    .calendar-pic {
+      width: 30px;
+      height: 30px;
+    }
+    .day {
+      font-size: 0.9em;
+    }
+    li {
+      font-size: 0.9em;
+      min-height: 30px;
+      .time {
+        font-size: 0.9em;
+        min-height: 30px;
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+    }
+  }
 }
+
 .profile-top-background {
-	width: auto;
-	height: 50%;
-	max-height: 150px;
-	background-size: cover;
-	background: $color_alto_approx;
+  width: auto;
+  height: 50%;
+  max-height: 150px;
+  background-size: cover;
+  background: $color_alto_approx;
 }
+
 .profile-top-user-info {
-	display: flex;
-	width: auto;
-	height: 100px;
-	padding-left: 250px;
-	background-color: $white;
-	.data {
-		font-family: $font_3;
-		font-size: 16px;
-		height: 50%;
-		margin-top: 20px;
-		padding-right: 15px;
-	}
-	.right {
-		padding-left: 15px;
-		border-left: 0.5px solid $silver;
-	}
-	.title {
-		font-size: 22px;
-		font-weight: 600;
-		color: $color_shark_approx;
-	}
-	.text {
-		color: $color_suva_gray_approx;
-	}
+  display: flex;
+  width: auto;
+  height: 100px;
+  padding-left: 250px;
+  background-color: $white;
+  .data {
+    font-family: $font_3;
+    font-size: 16px;
+    height: 50%;
+    margin-top: 20px;
+    padding-right: 15px;
+  }
+  .right {
+    padding-left: 15px;
+    border-left: 0.5px solid $silver;
+  }
+  .title {
+    font-size: 22px;
+    font-weight: 600;
+    color: $color_shark_approx;
+  }
+  .text {
+    color: $color_suva_gray_approx;
+  }
 }
+
 @media screen and(max-width: 640px) {
-	.profile-top-user-info {
-		width: auto;
-		height: auto;
-		padding-bottom: 10px;
-		padding-left: 0;
-		background-color: $white;
-		justify-content: center;
-		.right {
-			padding-left: 15px;
-			border-left: 0.5px solid $silver;
-		}
-		.title {
-			font-size: 1em;
-			height: 50%;
-			padding-right: 15px;
-		}
-		.text {
-			font-size: 1em;
-			color: $color_suva_gray_approx;
-		}
-	}
-	.profile-top-avatar {
-		z-index: 5;
-		left: 23%;
-		width: 100px;
-		height: 100px;
-		margin-top: 10px;
-		border: solid 3px $white;
-	}
-	.profile-top-user-name {
-		font-size: 1.3em;
-		position: static;
-		display: block;
-		width: auto;
-		height: auto;
-		margin-top: 0;
-		margin-left: 0;
-		padding: 2px;
-		text-align: center;
-		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-		border-radius: 0;
-	}
-	.history-active {
-		margin-top: -20px;
-		padding: 0 25px 0 10px;
-		.day-active {
-			display: flex;
-			flex-direction: column;
-		}
-		.day {
-			font-size: 1em;
-			color: $color_gravel_approx;
-		}
-		.active-title {
-			margin-left: 5px;
-		}
-	}
+  .profile-top-user-info {
+    width: auto;
+    height: auto;
+    padding-bottom: 10px;
+    padding-left: 0;
+    background-color: $white;
+    justify-content: center;
+    .right {
+      padding-left: 15px;
+      border-left: 0.5px solid $silver;
+    }
+    .title {
+      font-size: 1em;
+      height: 50%;
+      padding-right: 15px;
+    }
+    .text {
+      font-size: 1em;
+      color: $color_suva_gray_approx;
+    }
+  }
+  .profile-top-avatar {
+    z-index: 5;
+    left: 23%;
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+    border: solid 3px $white;
+  }
+  .profile-top-user-name {
+    font-size: 1.3em;
+    position: static;
+    display: block;
+    width: auto;
+    height: auto;
+    margin-top: 0;
+    margin-left: 0;
+    padding: 2px;
+    text-align: center;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 0;
+  }
+  .history-active {
+    margin-top: -20px;
+    padding: 0 25px 0 10px;
+    .day-active {
+      display: flex;
+      flex-direction: column;
+    }
+    .day {
+      font-size: 1em;
+      color: $color_gravel_approx;
+    }
+    .active-title {
+      margin-left: 5px;
+    }
+  }
 }
+
 .profile-top-avatar {
-	position: absolute;
-	z-index: 5;
-	width: 150px;
-	height: 150px;
-	margin-top: 50px;
-	margin-left: 50px;
-	border: solid 5px $white;
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-	border-radius: 100px;
-	background-image: $url_0;
-	background-color: $color_navy_blue_approx;
-	background-size: 100%;
+  position: absolute;
+  z-index: 5;
+  width: 150px;
+  height: 150px;
+  margin-top: 50px;
+  margin-left: 50px;
+  border: solid 5px $white;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 100px;
+  background-image: $url_0;
+  background-color: $color_navy_blue_approx;
+  background-size: 100%;
 }
+
 .profile-top-user-name {
-	font-size: 2em;
-	font-weight: 200;
-	position: absolute;
-	z-index: 1;
-	margin-top: -48px;
-	margin-left: 170px;
-	padding: 1px;
-	padding-right: 80px;
-	padding-left: 40px;
-	color: $white;
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-	border-radius: 5px;
-	background-color: $color_dodger_blue_60_approx;
+  font-size: 2em;
+  font-weight: 200;
+  position: absolute;
+  z-index: 1;
+  margin-top: -48px;
+  margin-left: 170px;
+  padding: 1px;
+  padding-right: 80px;
+  padding-left: 40px;
+  color: $white;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 5px;
+  background-color: $color_dodger_blue_60_approx;
 }
+
 .day-active {
-	padding: 25px 20px;
+  padding: 25px 20px;
 }
+
 .workarea-main {
-	height: calc(100% - 104px);
+  height: calc(100% - 104px);
 }
+
 .workarea-main__scroll-bar {
-	height: 100%;
+  height: 100%;
 }
+
 .workarea-main__scroll-content {
-	padding-bottom: 55px;
+  padding-bottom: 55px;
 }
+
 .my-panel {
-	width: 100%;
+  width: 100%;
 }
+
 .my-panel__header {
-	margin-top: 0;
-	padding: 10px;
-	color: $color_tapa_approx;
-	background: $color_gallery_approx;
-	font-size: 1.5em;
+  margin-top: 0;
+  padding: 10px;
+  color: $color_tapa_approx;
+  background: $color_gallery_approx;
+  font-size: 1.5em;
 }
+
 .my-panel__content {
-	padding: 15px;
+  padding: 15px;
 }
+
 .dashboard {
-	padding: 10px 10px 0 10px !important;
-	width: 100%;
+  padding: 10px 10px 0 10px !important;
+  width: 100%;
 }
+
 .dashboard__grid {
-	margin: 0 -15px;
+  margin: 0 -15px;
 }
+
 .toasts {
-	padding: 15px 0;
+  padding: 15px 0;
 }
+
 .toasts__button {
-	margin: 5px 10px 5px 0;
+  margin: 5px 10px 5px 0;
 }
+
 .toastr {
-	&.error {
-		background-color: $color_red_orange_approx !important;
-	}
-	&.success {
-		background-color: $color_apple_approx !important;
-	}
-	&.info {
-		background-color: $color_dodger_blue_approx !important;
-	}
-	&.warning {
-		background-color: $color_california_approx !important;
-	}
+  &.error {
+    background-color: $color_red_orange_approx !important;
+  }
+  &.success {
+    background-color: $color_apple_approx !important;
+  }
+  &.info {
+    background-color: $color_dodger_blue_approx !important;
+  }
+  &.warning {
+    background-color: $color_california_approx !important;
+  }
 }
+
 .table-page {
-	padding: 0;
+  padding: 0;
 }
+
 .table-com {
-	background: $white;
-	position: relative;
+  background: $white;
+  position: relative;
 }
+
 .table-com__header {
-	padding: 5px 15px;
-	overflow: hidden;
+  padding: 5px 15px;
+  overflow: hidden;
 }
+
 .table-com__search-wrap {
-	padding: 14px 0 0 15px;
-	overflow: hidden;
+  padding: 14px 0 0 15px;
+  overflow: hidden;
 }
+
 .table-com__search-input-col {
-	padding-top: 13px;
+  padding-top: 13px;
 }
+
 .table-com__searchBy-input {
-	margin-top: -10px;
+  margin-top: -10px;
 }
+
 .table-com__search {
-	padding-right: 50px;
+  padding-right: 50px;
 }
+
 .table-com__search-input {
-	height: 48px;
-	font-size: 1.5em;
-	border: 0;
-	float: left;
-	z-index: 999;
-	width: calc(100% - 48px) !important;
-	&:focus {
-		border: 0;
-		outline: 0;
-	}
-	&:hover {
-		border: 0;
-		outline: 0;
-	}
-	&:active {
-		border: 0;
-		outline: 0;
-	}
+  height: 48px;
+  font-size: 1.5em;
+  border: 0;
+  float: left;
+  z-index: 999;
+  width: calc(100% - 48px) !important;
+  &:focus {
+    border: 0;
+    outline: 0;
+  }
+  &:hover {
+    border: 0;
+    outline: 0;
+  }
+  &:active {
+    border: 0;
+    outline: 0;
+  }
 }
+
 .table-com__search-icon {
-	color: $black_54 !important;
+  color: $black_54 !important;
 }
+
 .table-com__footer {
-	padding: 3px 0;
-	overflow: hidden;
-	position: relative;
+  padding: 3px 0;
+  overflow: hidden;
+  position: relative;
 }
+
 .table-com__searchBy-input-col {
-	padding-left: 48px;
+  padding-left: 48px;
 }
+
 .table-com__search-btn-close {
-	position: absolute !important;
-	right: 15px;
-	top: 15px;
+  position: absolute !important;
+  right: 15px;
+  top: 15px;
 }
+
 .table-com__search-icon-search {
-	margin: 12px;
-	float: left;
+  margin: 12px;
+  float: left;
 }
+
 .table-com__tools {
-	float: right;
+  float: right;
 }
+
 .table-com__title {
-	float: left;
+  float: left;
 }
+
 .table-com__footer-tools {
-	color: $black_54 !important;
-	float: right;
-	display: flex;
-	align-items: center;
+  color: $black_54 !important;
+  float: right;
+  display: flex;
+  align-items: center;
 }
+
 .table-com__select {
-	color: $black_54 !important;
-	width: inherit !important;
-	font-size: 14px !important;
-	div {
-		color: $black_54 !important;
-	}
-	.table-com__select-item {
-		color: $black_54 !important;
-	}
+  color: $black_54 !important;
+  width: inherit !important;
+  font-size: 14px !important;
+  div {
+    color: $black_54 !important;
+  }
+  .table-com__select-item {
+    color: $black_54 !important;
+  }
 }
+
 .table-com__loader {
-	height: 3px !important;
-	position: absolute !important;
-	right: 0 !important;
-	left: 0 !important;
-	z-index: 199;
+  height: 3px !important;
+  position: absolute !important;
+  right: 0 !important;
+  left: 0 !important;
+  z-index: 199;
 }
+
 .table-com__body {
-	position: relative;
+  position: relative;
 }
+
 .table-com__layer {
-	position: absolute;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0margin -top -20px;
-	z-index: 99;
-	background: $white_50;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0 margin -top -20px;
+  z-index: 99;
+  background: $white_50;
 }
+
 .table-com__sort-btn {
-	display: flex;
-	cursor: pointer;
-	align-items: center;
-	color: $black_87_1;
-	&:hover {
-		color: $black_87_1;
-	}
-	&:focus {
-		color: $black_87_1;
-	}
-	&:active {
-		color: $black_87_1;
-	}
-	&:visited {
-		color: $black_87_1;
-	}
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  color: $black_87_1;
+  &:hover {
+    color: $black_87_1;
+  }
+  &:focus {
+    color: $black_87_1;
+  }
+  &:active {
+    color: $black_87_1;
+  }
+  &:visited {
+    color: $black_87_1;
+  }
 }
+
 .blue500-color-font {
-	color: $color_dodger_blue_approx !important;
+  color: $color_dodger_blue_approx !important;
 }
+
 .blue50-color-font {
-	color: $color_pattens_blue_approx !important;
+  color: $color_pattens_blue_approx !important;
 }
+
 .header__language-bar_active {
-	background: $black_15 !important;
+  background: $black_15 !important;
 }
+
 .table-com__error-wrap {
-	z-index: 9999;
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .table-com__error-box {
-	width: 50%;
-	overflow: hidden;
+  width: 50%;
+  overflow: hidden;
 }
+
 .table-com__error-content {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .error-panel {
-	width: 100%;
+  width: 100%;
 }
+
 .error-panel__header {
-	padding-left: 15px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	font-size: 1.2em;
-	font-weight: bold;
-	background: $color_gallery_approx;
-	color: $color_storm_dust_approx;
-	margin: 0;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2em;
+  font-weight: bold;
+  background: $color_gallery_approx;
+  color: $color_storm_dust_approx;
+  margin: 0;
 }
+
 .error-panel__content {
-	text-align: center;
-	padding: 30px;
-	color: $color_red_orange_approx;
-	font-size: 1.1em;
+  text-align: center;
+  padding: 30px;
+  color: $color_red_orange_approx;
+  font-size: 1.1em;
 }
+
 .error-panel__btn {
-	float: right;
-	padding: 5px !important;
+  float: right;
+  padding: 5px !important;
 }
+
 .table-com__footer-remove {
-	float: left;
-	padding: 0 15px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  float: left;
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .rc-collapse-header {
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-	border-radius: 0 !important;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 0 !important;
 }
+
 .rc-collapse-item {
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-	border-radius: 0 !important;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 0 !important;
 }
+
 .rc-collapse {
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-	border-radius: 0 !important;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 0 !important;
 }
+
 .table-com__empty-rows-view {
-	display: flex;
-	justify-content: center;
-	font-size: 1.3em;
-	padding: 30px;
+  display: flex;
+  justify-content: center;
+  font-size: 1.3em;
+  padding: 30px;
 }
+
 .settings-general__tabs {
-	background-color: $color_dodger_blue_approx !important;
+  background-color: $color_dodger_blue_approx !important;
 }
+
 .profilePage {
-	padding: 20px 20px 0 20px;
+  padding: 20px 20px 0 20px;
 }
+
 .wrapPage {
-	padding: 20px 20px 0 20px;
+  padding: 20px 20px 0 20px;
 }
+
 .react-grid-item {
-	background: $red;
+  background: $red;
 }
+
 .user-info__tool-btn {
-	position: absolute !important;
-	top: 3px;
-	right: 0;
+  position: absolute !important;
+  top: 3px;
+  right: 0;
 }
+
 .contact-form-wrap {
-	margin-bottom: 15px !important;
+  margin-bottom: 15px !important;
 }
+
 .contact-info-wrap {
-	margin-bottom: 15px !important;
+  margin-bottom: 15px !important;
 }
+
 .contact-form {
-	min-height: 450px;
-	padding: 15px;
-	overflow: hidden;
+  min-height: 450px;
+  padding: 15px;
+  overflow: hidden;
 }
+
 .contact-info {
-	min-height: 450px;
-	padding: 15px;
+  min-height: 450px;
+  padding: 15px;
 }
+
 .contact-info-content {
-	line-height: 1.3em;
+  line-height: 1.3em;
 }
+
 .page-wrap {
-	min-height: calc(100vh - 104px);
-	margin-bottom: -40px;
-	&:after {
-		content: '';
-		display: block;
-	}
+  min-height: calc(100vh - 104px);
+  margin-bottom: -40px;
+  &:after {
+    content: '';
+    display: block;
+  }
 }
+
 .site-footer {
-	height: 40px;
-	width: 100%;
-	background: $color_steel_blue_approx;
-	justify-content: space-between;
-	display: flex;
-	align-items: center;
-	padding: 0 30px;
-	color: $white;
+  height: 40px;
+  width: 100%;
+  background: $color_steel_blue_approx;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  color: $white;
 }
+
 .go-top-btn {
-	position: fixed;
-	right: 30px;
-	bottom: 70px;
-	z-index: 300;
-	button {
-		background: $color_dodger_blue_approx !important;
-	}
-}
-.header-navigation-bar {
-	background: $color_steel_blue_approx;
-	width: 100%;
-	height: 40px;
-	color: $white;
-	padding: 0 20px;
-	display: flex;
-	align-items: center;
-	position: relative;
-}
-.header-navigation-bar__help-btn {
-	position: absolute;
-	right: 10px;
-}
-.tableActions_inline-block {
-	display: inline-block;
-}
-.wrap-hospital-dialog-add {
-	height: 250px;
-}
-.d-none {
-	display: none !important;
-}
-.checkbox-style {
-	color: $color_alto_approx !important;
-	padding-top: 15px;
-}
-@-moz-keyframes rotation {
-	from {
-		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-		transform: rotate(0deg);
-	}
-	to {
-		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-		transform: rotate(359deg);
-	}
-}
-@-webkit-keyframes rotation {
-	from {
-		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-		transform: rotate(0deg);
-	}
-	to {
-		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-		transform: rotate(359deg);
-	}
-}
-@-o-keyframes rotation {
-	from {
-		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-		transform: rotate(0deg);
-	}
-	to {
-		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-		transform: rotate(359deg);
-	}
-}
-@keyframes rotation {
-	from {
-		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-		transform: rotate(0deg);
-	}
-	to {
-		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-		transform: rotate(359deg);
-	}
-}
-@-moz-keyframes bounce {
-	0% {
-		margin-top: 100px;
-	}
-	100% {
-		margin-top: 100px;
-	}
-	40% {
-		margin-top: 50px;
-	}
-}
-@-webkit-keyframes bounce {
-	0% {
-		margin-top: 100px;
-	}
-	100% {
-		margin-top: 100px;
-	}
-	40% {
-		margin-top: 50px;
-	}
-}
-@-o-keyframes bounce {
-	0% {
-		margin-top: 100px;
-	}
-	100% {
-		margin-top: 100px;
-	}
-	40% {
-		margin-top: 50px;
-	}
-}
-@keyframes bounce {
-	0% {
-		margin-top: 100px;
-	}
-	100% {
-		margin-top: 100px;
-	}
-	40% {
-		margin-top: 50px;
-	}
-}
-.sidebar-main__link-active .sidebar-main__link {
-	background: $black_10 !important;
-}
-.tables .pagination {
-	display: none;
-}
-.toasts__button_white span {
-	color: $white !important;
-}
-.redux-toastr.top-right {
-	top: 85px !important;
-}
-input:-webkit-autofill:focus {
-}
-.react-grid-Cell.selected {
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-	border-radius: 0 !important;
-	border-width: 1px !important;
-}
-.h-full > div {
-	height: 100%;
-}
-.user-tool__menu-item-wrap > div > div {
-	padding: 0 !important;
+  position: fixed;
+  right: 30px;
+  bottom: 70px;
+  z-index: 300;
+  button {
+    background: $color_dodger_blue_approx !important;
+  }
 }
 
 .header-navigation-bar {
-	a {
-		display: inline;
-	}
+  background: $color_steel_blue_approx;
+  width: 100%;
+  height: 40px;
+  color: $white;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.header-navigation-bar__help-btn {
+  position: absolute;
+  right: 10px;
+}
+
+.tableActions_inline-block {
+  display: inline-block;
+}
+
+.wrap-hospital-dialog-add {
+  height: 250px;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.checkbox-style {
+  color: $color_alto_approx !important;
+  padding-top: 15px;
+}
+
+@-moz-keyframes rotation {
+  from {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(0deg);
+  }
+  to {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(359deg);
+  }
+}
+
+@-webkit-keyframes rotation {
+  from {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(0deg);
+  }
+  to {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(359deg);
+  }
+}
+
+@-o-keyframes rotation {
+  from {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(0deg);
+  }
+  to {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(0deg);
+  }
+  to {
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: rotate(359deg);
+  }
+}
+
+@-moz-keyframes bounce {
+  0% {
+    margin-top: 100px;
+  }
+  100% {
+    margin-top: 100px;
+  }
+  40% {
+    margin-top: 50px;
+  }
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    margin-top: 100px;
+  }
+  100% {
+    margin-top: 100px;
+  }
+  40% {
+    margin-top: 50px;
+  }
+}
+
+@-o-keyframes bounce {
+  0% {
+    margin-top: 100px;
+  }
+  100% {
+    margin-top: 100px;
+  }
+  40% {
+    margin-top: 50px;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    margin-top: 100px;
+  }
+  100% {
+    margin-top: 100px;
+  }
+  40% {
+    margin-top: 50px;
+  }
+}
+
+.sidebar-main__link-active .sidebar-main__link {
+  background: $black_10 !important;
+}
+
+.tables .pagination {
+  display: none;
+}
+
+.toasts__button_white span {
+  color: $white !important;
+}
+
+.redux-toastr.top-right {
+  top: 85px !important;
+}
+
+input:-webkit-autofill:focus {
+}
+
+.react-grid-Cell.selected {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 0 !important;
+  border-width: 1px !important;
+}
+
+.h-full > div {
+  height: 100%;
+}
+
+.user-tool__menu-item-wrap > div > div {
+  padding: 0 !important;
+}
+
+.header-navigation-bar {
+  a {
+    display: inline;
+  }
 }

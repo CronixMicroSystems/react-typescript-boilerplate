@@ -29,7 +29,7 @@ class NotFoundComponent extends React.Component<ConnectedState & ConnectedDispat
   public render () {
     const NOT_FOUND = (<div>
       <IndexLinkContainer to={'/'}>
-        <MyImage src={'../../images/header_logo.jpg'}
+        <MyImage src={'../../img/header_logo.jpg'}
           className="not-found__brand"
           responsive/>
       </IndexLinkContainer>

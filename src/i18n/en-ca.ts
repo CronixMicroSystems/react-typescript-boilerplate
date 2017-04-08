@@ -57,7 +57,7 @@ export default {
     login: 'Login now!'
   },
   Sidebar: {
-    brand: 'React-boilerplate',
+    brand: 'React-ts-boilerplate',
     generalMenuLabel: 'Common',
     moreMenuLabel: 'Other',
     usersMenuItem: 'Users',
@@ -83,6 +83,9 @@ export default {
     namePage: 'Profile'
   },
   SettingsPage: {
+    GeneralPage: {
+      namePage: 'General'
+    },
     namePage: 'Settings'
   },
   EmailPage: {

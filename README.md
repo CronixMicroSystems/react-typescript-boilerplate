@@ -1,5 +1,9 @@
 # React-typescript-boilerplate
 
+<a href="https://travis-ci.org/CronixMicroSystems/react-typescript-boilerplate">
+    <img src="https://travis-ci.org/CronixMicroSystems/react-typescript-boilerplate.svg?branch=master" alt="Build Status" />
+</a>
+
 # DEVELOPMENT
 
 1. yarn

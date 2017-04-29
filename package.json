@@ -107,7 +107,7 @@
     "tslint": "^4.5.1",
     "tslint-loader": "^3.4.3",
     "typescript": "next",
-    "url-loader": "^0.5.7",
+    "url-loader": "^0.5.8",
     "validator": "^7.0.0",
     "webpack": "^2.3.2",
     "webpack-dev-middleware": "^1.8.4",
@@ -115,6 +115,8 @@
     "webpack-hot-middleware": "^2.13.2"
   },
   "devDependencies": {
-    "babel-plugin-transform-class-properties": "^6.23.0"
+    "babel-plugin-transform-class-properties": "^6.23.0",
+    "uglify-js": "git://github.com/mishoo/UglifyJS2#harmony",
+    "uglifyjs-webpack-plugin": "^0.4.3"
   }
 }

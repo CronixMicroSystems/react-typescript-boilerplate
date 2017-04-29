@@ -14,8 +14,7 @@
     "lint-css": "stylelint './src/**/*.scss' --syntax scss --fix; exit 0",
     "lintfix": "yarn run lintfix-js && yarn run lintfix-css",
     "lintfix-js": "eslint --ext .js ./src --fix",
-    "lintfix-css": "stylefmt --config ./.stylelintrc --recursive ./src/**/*.scss",
-    "dll": "rimraf dll && cross-env NODE_ENV=production webpack --config=webpack.config.dll.js --env.prod=false"
+    "lintfix-css": "stylefmt --config ./.stylelintrc --recursive ./src/**/*.scss"
   },
   "dependencies": {
     "@types/axios": "^0.14.0",

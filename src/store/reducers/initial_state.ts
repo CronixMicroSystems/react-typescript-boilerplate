@@ -2,13 +2,12 @@ import * as jwtDecode from 'jwt-decode'
 
 const LOCALE = window.localStorage.getItem('locale') || 'en-CA'
 
-let TOKEN = window.localStorage.getItem('token')
+let TOKEN = null
 
 const TOKEN_DATA = TOKEN ? jwtDecode(TOKEN)['0'] : {}
 
 if (!TOKEN_DATA || (TOKEN_DATA && 1000 * TOKEN_DATA.exp < Date.now())) {
   window.localStorage.removeItem('token')
-
   TOKEN = null
 }
 

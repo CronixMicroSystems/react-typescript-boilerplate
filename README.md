@@ -19,3 +19,7 @@
 * yarn run lintfix-js
 * yarn run lintfix-css
 * yarn run lintfix (yarn run lintfix-js and yarn run lintfix-css)
+
+# SCREENSHOT
+
+![alt text](./screenshot.png)

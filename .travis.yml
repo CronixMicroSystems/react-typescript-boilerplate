@@ -1,0 +1,19 @@
+language: node_js
+
+node_js:
+  - "iojs"
+   - "7"
+
+cache: yarn
+
+script:
+  - yarn run build
+
+notifications:
+  email:
+    on_failure: change
+
+cache:
+  yarn: true
+  directories:
+    - node_modules

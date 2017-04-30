@@ -4,6 +4,10 @@
     <img src="https://travis-ci.org/CronixMicroSystems/react-typescript-boilerplate.svg?branch=master" alt="Build Status" />
 </a>
 
+<a href="https://gitter.im/CronixMicroSystems/Lobby">
+    <img src="https://badges.gitter.im/owner/repo.png" alt="Gitter Chat" />
+</a>
+
 ![alt text](./cronix.png)
 
 <div>

@@ -4,6 +4,12 @@
     <img src="https://travis-ci.org/CronixMicroSystems/react-typescript-boilerplate.svg?branch=master" alt="Build Status" />
 </a>
 
+![alt text](./cronix.png)
+
+<div>
+  <sub>Created by <a href="https://github.com/Kokatsuna">Vladimir Ivanov</a> and maintained with ❤️ by an amazing <a href="https://github.com/CronixMicroSystems">Cronix team</a>.</sub>
+</div>
+
 # DEVELOPMENT
 
 1. yarn

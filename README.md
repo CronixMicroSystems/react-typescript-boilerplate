@@ -14,6 +14,10 @@
   <sub>Created by <a href="https://github.com/Kokatsuna">Vladimir Ivanov</a> and maintained with ❤️ by an amazing <a href="https://github.com/CronixMicroSystems">Cronix team</a>.</sub>
 </div>
 
+# DEMO
+
+<a href="http://react-typescript-boilerplate.cronix.ms">Link</a>
+
 # DEVELOPMENT
 
 1. yarn

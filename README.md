@@ -38,11 +38,6 @@
 * yarn run lintfix-css
 * yarn run lintfix (yarn run lintfix-js and yarn run lintfix-css)
 
-# SCREENSHOT
-
-![alt text](./screenshot.png)
-
-
 # License
 
 This project is licensed under the MIT license, Copyright (c) 2017 Cronix Micro Systems. For more information see LICENSE.md.

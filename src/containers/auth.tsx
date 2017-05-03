@@ -1,25 +1,25 @@
-import * as React from 'react'
-import {connect} from 'react-redux'
-import NetworkSpinner from '../components/overall/network_spinner'
-import {deepOrange500} from 'material-ui/styles/colors'
-import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import ReduxToastr from 'react-redux-toastr'
-import {AlertDialog} from '../components/dialogs/alertDialog'
+import * as React from "react";
+import {connect} from "react-redux";
+import NetworkSpinner from "../components/overall/network_spinner";
+import {deepOrange500} from "material-ui/styles/colors";
+import getMuiTheme from "material-ui/styles/getMuiTheme";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import ReduxToastr from "react-redux-toastr";
+import {AlertDialog} from "../components/dialogs/alertDialog";
 
 const muiTheme = getMuiTheme({
   palette: {
     accent1Color: deepOrange500
   }
-})
+});
 
 interface OwnProps {}
 interface OwnState {}
-interface ConnectedState { app: { networkActive: boolean } }
+interface ConnectedState { app: { networkActive: boolean }; }
 interface ConnectedDispatch {}
 
-const mapStateToProps = ({app}): ConnectedState => ({app})
-const mapDispatchToProps = null
+const mapStateToProps = ({app}): ConnectedState => ({app});
+const mapDispatchToProps = null;
 
 class AuthComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
   render () {
@@ -34,7 +34,7 @@ class AuthComponent extends React.Component<ConnectedState & ConnectedDispatch &
           </div>
         </MuiThemeProvider>
       </div>
-    )
+    );
   }
 }
-export const Auth: any = connect(mapStateToProps, mapDispatchToProps)(AuthComponent)
+export const Auth: any = connect(mapStateToProps, mapDispatchToProps)(AuthComponent);

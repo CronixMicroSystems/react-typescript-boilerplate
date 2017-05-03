@@ -65,8 +65,6 @@ class ContactsComponent extends React.Component<ConnectedState & ConnectedDispat
   fnPhoneChange (value) { this.setState({Phone: value}) }
   fnMessageChange (value) { this.setState({Message: value}) }
 
-  fnSend () {}
-
   fnError (name, status) { this.setState({Errors: ValidatorError(name, status, this.state.Errors)}) }
 
   public render () {
@@ -145,7 +143,6 @@ class ContactsComponent extends React.Component<ConnectedState & ConnectedDispat
                         disabled={this.state.Errors.length !== 0}
                         label="Send"
                         className="pull-right"
-                        onClick={this.fnSend.bind(this)}
                       />
                     </div>
                   </div>

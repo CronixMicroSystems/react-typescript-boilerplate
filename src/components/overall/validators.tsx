@@ -1,8 +1,8 @@
 import * as validator from 'validator'
 
 export function ValidatorError (name, status, err) {
-  !status && err.indexOf(name) === -1 ? err.push(name) : ''
-  status && err.indexOf(name) !== -1 ? err.splice(err.indexOf(name), 1) : ''
+  if (!status && err.indexOf(name) === -1) { err.push(name) }
+  if (status && err.indexOf(name) !== -1) { err.splice(err.indexOf(name), 1) }
   console.log('this.state.Errors', err)
   return err
 }

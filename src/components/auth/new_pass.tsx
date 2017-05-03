@@ -69,10 +69,10 @@ class NewPassComponent extends React.Component<ConnectedState & ConnectedDispatc
   validateConfirmPassword () {
     let err = this.state.Errors
     if (this.state.Password !== this.state.ConfirmPassword) {
-      err.indexOf('ConfirmPasswordError') === -1 ? err.push('ConfirmPasswordError') : ''
+      if (err.indexOf('ConfirmPasswordError') === -1) { err.push('ConfirmPasswordError') }
       this.setState({ConfirmPasswordError: 'Passwords do not match', Errors: err})
     } else {
-      err.indexOf('ConfirmPasswordError') !== -1 ? err.splice(err.indexOf('ConfirmPasswordError'), 1) : ''
+      if (err.indexOf('ConfirmPasswordError') !== -1) { err.splice(err.indexOf('ConfirmPasswordError'), 1) }
       this.setState({ConfirmPasswordError: '', Errors: err})
     }
   }
@@ -92,14 +92,14 @@ class NewPassComponent extends React.Component<ConnectedState & ConnectedDispatc
     let err = this.state.Errors
 
     if (!validator.isLength(value, { min: 6, max: 64 }) && !validator.isEmpty(value)) {
-      err.indexOf('PasswordError') === -1 ? err.push('PasswordError') : ''
+      if (err.indexOf('PasswordError') === -1) { err.push('PasswordError') }
       this.setState({PasswordError: 'The Password must be more than 6 and less than 64 characters long', Errors: err})
     } else {
-      err.indexOf('PasswordError') !== -1 ? err.splice(err.indexOf('PasswordError'), 1) : ''
+      if (err.indexOf('PasswordError') !== -1) { err.splice(err.indexOf('PasswordError'), 1) }
       this.setState({PasswordError: '', Errors: err})
 
       if (validator.isEmpty(value) && status) {
-        err.indexOf('PasswordError') === -1 ? err.push('PasswordError') : ''
+        if (err.indexOf('PasswordError') === -1) { err.push('PasswordError') }
         this.setState({PasswordError: 'The password is required and cannot be empty', Errors: err})
       }
     }

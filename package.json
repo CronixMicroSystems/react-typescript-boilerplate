@@ -11,9 +11,11 @@
     "build": "cross-env NODE_ENV=production webpack --env.prod=true",
     "lint": "yarn run lint-js && yarn run lint-css",
     "lint-js": "eslint --ext .js devServer.js webpack.config.dev.js webpack.config.prod.js ./src",
+    "lint-ts": "tslint ./src/**/*.ts?",
     "lint-css": "stylelint './src/**/*.scss' --syntax scss --fix; exit 0",
     "lintfix": "yarn run lintfix-js && yarn run lintfix-css",
     "lintfix-js": "eslint --ext .js ./src --fix",
+    "lintfix-ts": "tslint ./src/**/*.ts? --fix",
     "lintfix-css": "stylefmt --config ./.stylelintrc --recursive ./src/**/*.scss"
   },
   "dependencies": {

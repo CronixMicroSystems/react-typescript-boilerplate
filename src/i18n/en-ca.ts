@@ -103,6 +103,7 @@ export default {
   },
   HeaderTools: {
     labelLanguage: 'Language',
+    github: 'Our github',
     labelFullScreen: 'FullScreen',
     labelNotifications: 'Notifications',
     labelTools: 'Tools',

@@ -97,8 +97,8 @@ class TemplateInputComponent extends React.Component<ConnectedState & ConnectedD
       }
     }
 
-    checked && this.setState({FieldValueError: ''})
-    this.props.onChange && this.props.onChange(value, this.state.Name, checked)
+    if (checked) { this.setState({FieldValueError: ''}) }
+    if (this.props.onChange) { this.props.onChange(value, this.state.Name, checked) }
     return checked
   }
 

@@ -19,7 +19,7 @@ class MyGreatPlaceComponent extends React.Component<ConnectedState & ConnectedDi
     let K_WIDTH: number = 30
     let K_HEIGHT: number = 30
 
-    let greatPlaceStyle:any = {
+    let greatPlaceStyle: any = {
       position: 'absolute',
       width: K_WIDTH,
       height: K_HEIGHT,

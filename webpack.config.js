@@ -2,7 +2,6 @@ const webpack = require('webpack')
 const HappyPack = require('happypack')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const path = require('path')
-// const autoprefixer = require('autoprefixer')
 
 const sourcePath = path.join(__dirname, './src')
 const staticsPath = path.join(__dirname, './static')
@@ -77,8 +76,7 @@ module.exports = function () {
           test: /\.tsx$/,
           enforce: 'pre',
           exclude: [/node_modules/],
-          loader: 'tslint-loader',
-          options: { /* Loader options go here */ }
+          loader: 'tslint-loader'
         },
         {
           test: /\.tsx$/,

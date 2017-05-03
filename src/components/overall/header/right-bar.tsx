@@ -11,6 +11,8 @@ import LanguageIcon from 'material-ui/svg-icons/action/language'
 import IconMenu from 'material-ui/IconMenu'
 import MenuItem from 'material-ui/MenuItem'
 import screenfull = require('screenfull')
+import FlatButton from 'material-ui/FlatButton';
+import FontIcon from 'material-ui/FontIcon';
 
 import {MyListItem} from '../../overall/my_list_item'
 import {MyLinkNav} from '../../overall/my_link_nav'
@@ -33,7 +35,7 @@ const mapDispatchToProps = (dispatch: Redux.Dispatch<any>): ConnectedDispatch =>
 
 class RightBarComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
 
-  onFullScreen () { screenfull.enabled && screenfull.toggle() }
+  onFullScreen () { if (screenfull.enabled) { screenfull.toggle() } }
   fnChangeLanguage (locale) { this.props.actionChangeLanguageLocal(locale) }
 
   public render () {
@@ -50,6 +52,13 @@ class RightBarComponent extends React.Component<ConnectedState & ConnectedDispat
     let locale: any = this.props.i18n.locale
     return (
       <div className="header__right-bar">
+        <IconButton
+          className="github-btn"
+          href="https://github.com/CronixMicroSystems/react-typescript-boilerplate"
+          tooltip={I18n.t('HeaderTools.github')}
+          target="_blank"
+          iconClassName="fa fa-github"
+        />
         <IconMenu
           iconButtonElement={
             <IconButton tooltip={I18n.t('HeaderTools.labelLanguage')}>

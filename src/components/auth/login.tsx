@@ -58,14 +58,14 @@ class LoginComponent extends React.Component<ConnectedState & ConnectedDispatch 
   onSubmitButtonClick () {
     let err = this.state.Errors
     if (this.state.Email === '') {
-      err.indexOf('EmailError') === -1 ? err.push('EmailError') : ''
+      if (err.indexOf('EmailError') === -1) { err.push('EmailError') }
       this.setState({EmailError: 'The Email is required and cannot be empty', Errors: err})
     }
     if (this.state.Password === '') {
-      err.indexOf('PasswordError') === -1 ? err.push('PasswordError') : ''
+      if (err.indexOf('PasswordError') === -1) { err.push('PasswordError') }
       this.setState({PasswordError: 'The Password is required and cannot be empty', Errors: err})
     }
-    this.state.Errors.length === 0 ? this.props.actionLoginUserLocal(this.state.Email, this.state.Password) : ''
+    if (this.state.Errors.length === 0) { this.props.actionLoginUserLocal(this.state.Email, this.state.Password) }
   }
 
   fnEmail (event) {
@@ -84,10 +84,10 @@ class LoginComponent extends React.Component<ConnectedState & ConnectedDispatch 
   validateEmail (value) {
     let err = this.state.Errors
     if (!validator.isEmail(value) && !validator.isEmpty(value)) {
-      err.indexOf('EmailError') === -1 ? err.push('EmailError') : ''
+      if (err.indexOf('EmailError') === -1 ) { err.push('EmailError') }
       this.setState({EmailError: 'Invalid email', Errors: err})
     } else {
-      err.indexOf('EmailError') !== -1 ? err.splice(err.indexOf('EmailError'), 1) : ''
+      if (err.indexOf('EmailError') !== -1) { err.splice(err.indexOf('EmailError'), 1) }
       this.setState({EmailError: '', Errors: err})
     }
   }
@@ -95,10 +95,10 @@ class LoginComponent extends React.Component<ConnectedState & ConnectedDispatch 
   validatePassword (value) {
     let err = this.state.Errors
     if (!validator.isLength(value, { min: 6, max: 64 }) && !validator.isEmpty(value)) {
-      err.indexOf('PasswordError') === -1 ? err.push('PasswordError') : ''
+      if (err.indexOf('PasswordError') === -1) { err.push('PasswordError') }
       this.setState({PasswordError: 'The Password must be more than 6 and less than 64 characters long', Errors: err})
     } else {
-      err.indexOf('PasswordError') !== -1 ? err.splice(err.indexOf('PasswordError'), 1) : ''
+      if (err.indexOf('PasswordError') !== -1) { err.splice(err.indexOf('PasswordError'), 1) }
       this.setState({PasswordError: '', Errors: err})
     }
   }

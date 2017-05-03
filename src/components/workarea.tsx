@@ -1,35 +1,35 @@
-import * as React from 'react'
-import {connect} from 'react-redux'
-import ReduxToastr from 'react-redux-toastr'
+import * as React from "react";
+import {connect} from "react-redux";
+import ReduxToastr from "react-redux-toastr";
 
-import {Footer} from './footer'
-import {GoTop} from './overall/go_top'
-import {AboutDialog} from './dialogs/aboutDialog'
-import ScrollArea = require('react-scrollbar')
+import {Footer} from "./footer";
+import {GoTop} from "./overall/go_top";
+import {AboutDialog} from "./dialogs/aboutDialog";
+import ScrollArea = require("react-scrollbar");
 
 interface OwnProps {}
 interface ConnectedState {}
 interface ConnectedDispatch {}
 interface OwnState {
-  ScrollArea: any
+  ScrollArea: any;
 }
 
-const mapStateToProps = null
-const mapDispatchToProps = null
+const mapStateToProps = null;
+const mapDispatchToProps = null;
 
 class WorkareaComponent extends React.Component<ConnectedState & ConnectedDispatch & OwnProps, OwnState> {
 
   constructor (props) {
-      super(props)
+      super(props);
       this.state = {
           ScrollArea: null
-      }
+      };
   }
 
-  onScrollChange (value) { this.setState({ScrollArea: value}) }
+  onScrollChange (value) { this.setState({ScrollArea: value}); }
 
   render () {
-    const ScrollAreaLocal = ScrollArea['default']
+    const ScrollAreaLocal = ScrollArea["default"];
     return (
       <div className="workarea-main">
         <ReduxToastr />
@@ -47,7 +47,7 @@ class WorkareaComponent extends React.Component<ConnectedState & ConnectedDispat
           <Footer />
         </ScrollAreaLocal>
       </div>
-    )
+    );
   }
 }
-export const Workarea: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(WorkareaComponent)
+export const Workarea: React.ComponentClass<OwnProps> = connect(mapStateToProps, mapDispatchToProps)(WorkareaComponent);

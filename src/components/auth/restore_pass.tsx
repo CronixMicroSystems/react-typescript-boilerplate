@@ -64,10 +64,10 @@ class ResPassComponent extends React.Component<ConnectedState & ConnectedDispatc
   validateEmail (value) {
     let err = this.state.Errors
     if (!validator.isEmail(value) && !validator.isEmpty(value)) {
-      err.indexOf('EmailError') === -1 ? err.push('EmailError') : ''
+      if (err.indexOf('EmailError') === -1) { err.push('EmailError') }
       this.setState({EmailError: 'Invalid email', Errors: err})
     } else {
-      err.indexOf('EmailError') !== -1 ? err.splice(err.indexOf('EmailError'), 1) : ''
+      if (err.indexOf('EmailError') !== -1) { err.splice(err.indexOf('EmailError'), 1) }
       this.setState({EmailError: '', Errors: err})
     }
   }

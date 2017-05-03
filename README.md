@@ -31,12 +31,14 @@
 # LINTING
 
 * yarn run lint-js
+* yarn run lint-ts
 * yarn run lint-css
-* yarn run lint (yarn run lint-js and yarn run lint-css)
+* yarn run lint (yarn run lint-js and yarn run lint-ts and yarn run lint-css)
 
 * yarn run lintfix-js
+* yarn run lintfix-ts
 * yarn run lintfix-css
-* yarn run lintfix (yarn run lintfix-js and yarn run lintfix-css)
+* yarn run lintfix (yarn run lintfix-js and yarn run lintfix-ts and yarn run lintfix-css)
 
 # License
 
